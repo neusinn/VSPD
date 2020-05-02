@@ -1,0 +1,5 @@
+<fitContributions>
+	<fitField id="47" displayInChart="true" sortOrder = "0" precision="0"
+		chartTitle="@Strings.vspd_graph_label" dataLabel="@Strings.vspd_label"
+		unitLabel="@Strings.vspd_unit" fillColor="#FF09933" />
+</fitContributions>

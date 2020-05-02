@@ -1,0 +1,7 @@
+<strings>
+    <string id="AppName">VSpeed</string>
+    
+    <string id="vspd_graph_label">Vertical Speed [m/s]</string>
+    <string id="vspd_label">VSPD</string>
+    <string id="vspd_unit">m/s</string>
+</strings>
