@@ -10,17 +10,21 @@ using Toybox.FitContributor;
 	vertical speed indicator (VSI), vertical velocity indicator (VVI).
 	
     As datasource the ambient (local) barometric pressure as measured by the pressure sensor will be used. 
-    This source data is already smoothed by a two-stage filter to reduce noise and instantaneous variation.
+    The barometer sensor has al lot of noice. Here the ambientPressure is used. This source data is already smoothed 
+    by a two-stage filter to reduce noise and instantaneous variation.
     
-    This algorithm will smoothe height by a Exponentially Weighted Moving Average (EWMA) filter with factor a = 0.2 of the newest measurement.
-    The vertical speed calculated over a 20 second time period and is rounded on 10 m/h.
+    In addition this algorithm will smoothe height with a Exponentially Weighted Moving Average (EWMA) filter with factor a = 0.1 of the newest measurement.
+    The vertical speed is calculated over a 30 second time period and is rounded on 10 m/h.
+    Vertical speed value below +/- 20 m/h will be set to 0.
 */
 class VSpeedView extends WatchUi.SimpleDataField {
 
-	// interval in seconds to calculate speed
-	const intervalInSec = 20;
-	const queueSize = intervalInSec;
-	const factorEWMA = 0.2;
+	// measure time period in seconds to calculate speed
+	const timePeriodInSec = 30;
+	const queueSize = timePeriodInSec;
+	const factorEWMA = 0.1;
+	//const intervalRecordToFit = 5; // Interval to record data point to fit file
+	//var   intervalCounter = 0;
 	
 	// data array for measurements series.
 	private var queue = new [queueSize];
@@ -73,10 +77,10 @@ class VSpeedView extends WatchUi.SimpleDataField {
 		var height = calcHeightFromPressure(p);	
 
 		// Exponentially Weighted Moving Average (EWMA)
-		var lastEntry = readLastEntryFromQueue();
-		if (lastEntry != null) { 
-			height = factorEWMA * height + (1 - factorEWMA) * readLastEntryFromQueue()[:height];
-			}
+		var newestDataPoint = readNewestEntryFromQueue();
+		if (newestDataPoint != null) { 
+			height = factorEWMA * height + (1 - factorEWMA) * newestDataPoint[:height];
+		}
         
         var dataPoint = fifoQueue({ :time=>time, :height=>height });
 		if (dataPoint == null) { return 0; } // handle start condition.
@@ -86,11 +90,25 @@ class VSpeedView extends WatchUi.SimpleDataField {
         
         // DEBUG logData(info, vspd, height, height - dataPoint[:height], time.subtract(dataPoint[:time]).value());
         
+        // Supress VSPD values < |20|  
+        if (vspd < 20 and vspd > -20) {
+        	vspd = 0;
+        }
+        
+        /* reduce entries
+        // write vspdField to activity reccord
+        if (intervalCounter >= intervalRecordToFit) {
+        	vspdField.setData(vspd);
+        	intervalCounter = 0;
+        } else {
+        	intervalCounter =+ 1;
+        }
+        */
+        vspdField.setData(vspd);
+        
         // round VSPD on the next 10m/h
         vspd = (Math.round(vspd / 10) * 10).toNumber();
         
-        // write vvspdField to activity reccord
-        vspdField.setData(vspd);
        	return vspd;
     }
     
@@ -118,7 +136,7 @@ class VSpeedView extends WatchUi.SimpleDataField {
         return h;
     }
     
-    
+    // put new element & get oldest element
     function fifoQueue(in) { 
         idx += 1;
         if (idx == queueSize) { idx = 0; }  
@@ -128,7 +146,7 @@ class VSpeedView extends WatchUi.SimpleDataField {
         return out;
     }
     
-    function readLastEntryFromQueue() {   
+    function readNewestEntryFromQueue() {   
         return queue[idx];
     }
     
