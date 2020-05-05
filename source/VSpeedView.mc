@@ -71,7 +71,7 @@ class VSpeedView extends WatchUi.SimpleDataField {
 		//p = TEST_PRESSURE;
 		//TEST_PRESSURE -= 10;
 		
-		if (p == null) { return "--"; }
+		if (p == null) { return "n/a"; }
 
 		var time = Time.now();
 		var height = calcHeightFromPressure(p);	
