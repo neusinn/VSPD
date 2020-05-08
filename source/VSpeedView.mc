@@ -32,7 +32,18 @@ class VSpeedView extends WatchUi.SimpleDataField {
 	
 	// datafield in FIT file
 	const VSPD_FIELD_ID = 47;
-	var vspdField = null;	
+	private var vspdField = null;	
+	
+	const AVG_VSPD_UP_FIELD_ID = 48;
+	private var avgVspdUpField = null;
+	private var avgVspdUp = 0;
+	private var timeVspdUp = 0;
+	const AVG_VSPD_MIN_FOR_MOVEMENT = 50; // Minimal ascend speed for recording 
+	
+	private var propAscentSpeedOnly = true;
+	private var propInMotion = true;
+	
+
 	
 	//var TEST_PRESSURE = 94000;
 	//var TEST_COUNTER = 0;
@@ -44,12 +55,22 @@ class VSpeedView extends WatchUi.SimpleDataField {
         SimpleDataField.initialize();
         label =  WatchUi.loadResource(Rez.Strings.vspd_label) + " " +  WatchUi.loadResource(Rez.Strings.vspd_unit); // The displayed label of the data field.
         
+        propAscentSpeedOnly = Application.Properties.getValue("propAscentSpeedOnly");
+        propInMotion = Application.Properties.getValue("propInMotion");
+        
         // Create the custom FIT data field to record vertical speed.
         vspdField = createField(
             "vspd",
             VSPD_FIELD_ID,
             FitContributor.DATA_TYPE_SINT32,
             {:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"m/h"}
+        );
+        
+        avgVspdUpField = createField(
+            "avgVspdAscent",
+            AVG_VSPD_UP_FIELD_ID,
+            FitContributor.DATA_TYPE_SINT32,
+            {:mesgType=>FitContributor.MESG_TYPE_LAP, :units=>"m/h"}
         );
         
         vspdField.setData(0.0);
@@ -86,9 +107,10 @@ class VSpeedView extends WatchUi.SimpleDataField {
 		if (dataPoint == null) { return 0; } // handle start condition.
 		
 		// vspd = (h - h0) / (t - t0)
-        var vspd = (height - dataPoint[:height]) / (time.subtract(dataPoint[:time]).value()) * 3600;
+		var deltaTime = time.subtract(dataPoint[:time]).value();
+        var vspd = (height - dataPoint[:height]) / deltaTime * 3600;
         
-        // DEBUG logData(info, vspd, height, height - dataPoint[:height], time.subtract(dataPoint[:time]).value());
+        // DEBUG logData(info, vspd, height, height - dataPoint[:height], deltaTime);
         
         // Supress VSPD values < |20|  
         if (vspd < 20 and vspd > -20) {
@@ -104,7 +126,21 @@ class VSpeedView extends WatchUi.SimpleDataField {
         	intervalCounter =+ 1;
         }
         */
-        vspdField.setData(vspd);
+        // record data for VSPD graph
+        if (vspd > 0 or ! propAscentSpeedOnly) {
+        	vspdField.setData(vspd);
+        }
+        
+        // record LAP data for average ascend speed
+        if (vspd > AVG_VSPD_MIN_FOR_MOVEMENT) {
+        	avgVspdUp = (avgVspdUp * timeVspdUp + vspd * deltaTime) / (timeVspdUp + deltaTime);
+        	avgVspdUpField.setData(avgVspdUp);
+        
+        } else if (! propInMotion) {
+        	vspd = (vspd < 0) ? 0 : vspd;
+        	avgVspdUp = (avgVspdUp * timeVspdUp + vspd * deltaTime) / (timeVspdUp + deltaTime);
+        	avgVspdUpField.setData(avgVspdUp); 
+        }
         
         // round VSPD on the next 10m/h
         vspd = (Math.round(vspd / 10) * 10).toNumber();
