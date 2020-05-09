@@ -8,6 +8,9 @@
     <string id="avg_vspd_title">Ø ascend speed in motion</string>
     <string id="avg_vspd_label">Ø VSPD</string>
     
+    <string id="propEnableGraph">Enable VSPD as graph</string>
+    <string id="propEnableLAPStatistic">Enable VSPD in LAP</string>
+	<string id="propEnableSummaryStatistic">Enable VSPD zone statistic</string>
     <string id="propAscentSpeedOnly">Record ascend speed only</string>
     <string id="propInMotion">LAP: Ø ascend speed when in motion only</string>
     

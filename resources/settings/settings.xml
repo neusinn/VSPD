@@ -1,4 +1,14 @@
 <settings>
+	<setting propertyKey = "@Properties.propEnableGraph" title = "@Strings.propEnableGraph">
+		<settingConfig type="boolean" />
+	</setting>
+	<setting propertyKey = "@Properties.propEnableLAPStatistic" title = "@Strings.propEnableLAPStatistic">
+		<settingConfig type="boolean" />
+	</setting>
+	<setting propertyKey = "@Properties.propEnableSummaryStatistic" title = "@Strings.propEnableSummaryStatistic">
+		<settingConfig type="boolean" />
+	</setting>
+		
 	<setting propertyKey = "@Properties.propAscentSpeedOnly" title = "@Strings.propAscentSpeedOnly">
 		<settingConfig type="boolean" />
 	</setting>

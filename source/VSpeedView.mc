@@ -39,14 +39,18 @@ class VSpeedView extends WatchUi.SimpleDataField {
 	private var timeVspdUp = 0;
 	const AVG_VSPD_MIN_FOR_MOVEMENT = 50; // Minimal ascend speed for recording 
 	
-	private var propAscentSpeedOnly = true;
-	private var propInMotion = true;
+	private var propEnableGraph;
+	private var propEnableLAPStatistic;
+	private var propEnableSummaryStatistic;
 	
-	private var propZone1 = 0;
-	private var propZone2 = 0;
-	private var propZone3 = 0;
-	private var propZone4 = 0;
-	private var propZone5 = 0;
+	private var propAscentSpeedOnly;
+	private var propInMotion;
+	
+	private var propZone1;
+	private var propZone2;
+	private var propZone3;
+	private var propZone4;
+	private var propZone5;
 	
 	private var zone1Field;
 	private var zone2Field;
@@ -71,6 +75,11 @@ class VSpeedView extends WatchUi.SimpleDataField {
         label =  WatchUi.loadResource(Rez.Strings.vspd_label) + " " +  WatchUi.loadResource(Rez.Strings.vspd_unit); // The displayed label of the data field.
         
         lastComputeTime = 0;
+        
+        propEnableGraph = Application.Properties.getValue("propEnableGraph");
+        propEnableLAPStatistic = Application.Properties.getValue("propEnableLAPStatistic");
+        propEnableSummaryStatistic = Application.Properties.getValue("propEnableSummaryStatistic");
+        
         propAscentSpeedOnly = Application.Properties.getValue("propAscentSpeedOnly");
         propInMotion = Application.Properties.getValue("propInMotion");
         
@@ -84,62 +93,68 @@ class VSpeedView extends WatchUi.SimpleDataField {
         propZone4 = (propZone3 < propZone4) ? propZone4 : propZone3 + 1;
  
         
-        avgVspdUpField = createField(
-            "avgVspdAscent",
-            48,
-            FitContributor.DATA_TYPE_SINT16,
-            {:mesgType=>FitContributor.MESG_TYPE_LAP, :units=>"m/h"}
-        );
+        if (propEnableGraph) {
+	        // Create the custom FIT data field to record vertical speed.
+	        vspdField = createField(
+	            "vspd",
+	            47,
+	            FitContributor.DATA_TYPE_SINT16,
+	            {:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"m/h"}
+	        );
+	        
+	        vspdField.setData(0);
+        }
         
-        // Create the custom FIT data field to record vertical speed.
-        vspdField = createField(
-            "vspd",
-            47,
-            FitContributor.DATA_TYPE_SINT16,
-            {:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"m/h"}
-        );
-        
-        zone1Field = createField(
-            "Z1",
-            51,
-            FitContributor.DATA_TYPE_STRING,
-            {:mesgType=>FitContributor.MESG_TYPE_SESSION, :count=>6}
-        );
-        zone2Field = createField(
-            "Z2",
-            52,
-            FitContributor.DATA_TYPE_STRING,
-            {:mesgType=>FitContributor.MESG_TYPE_SESSION, :count=>6}
-        );
-        zone3Field = createField(
-            "Z3",
-            53,
-            FitContributor.DATA_TYPE_STRING,
-            {:mesgType=>FitContributor.MESG_TYPE_SESSION, :count=>6}
-        );
-        zone4Field = createField(
-            "Z4",
-            54,
-            FitContributor.DATA_TYPE_STRING,
-            {:mesgType=>FitContributor.MESG_TYPE_SESSION, :count=>6}
-        );
-        zone5Field = createField(
-            "Z5",
-            55,
-            FitContributor.DATA_TYPE_STRING,
-            {:mesgType=>FitContributor.MESG_TYPE_SESSION, :count=>6}
-        );
+        if (propEnableLAPStatistic) {        
+	        avgVspdUpField = createField(
+	            "avgVspdAscent",
+	            48,
+	            FitContributor.DATA_TYPE_SINT16,
+	            {:mesgType=>FitContributor.MESG_TYPE_LAP, :units=>"m/h"}
+	        );
 
-                
-        // Initalize field data
-        vspdField.setData(0);
-        avgVspdUpField.setData(0);
+	    	avgVspdUpField.setData(0);
+	    }
         
-        zone1Field.setData("0:00");
-        zone2Field.setData("0:00");
-        zone3Field.setData("0:00");
-        zone4Field.setData("0:00");
-        zone5Field.setData("0:00");
+        if (propEnableSummaryStatistic) {
+	        zone1Field = createField(
+	            "Z1",
+	            51,
+	            FitContributor.DATA_TYPE_STRING,
+	            {:mesgType=>FitContributor.MESG_TYPE_SESSION, :count=>6}
+	        );
+	        zone2Field = createField(
+	            "Z2",
+	            52,
+	            FitContributor.DATA_TYPE_STRING,
+	            {:mesgType=>FitContributor.MESG_TYPE_SESSION, :count=>6}
+	        );
+	        zone3Field = createField(
+	            "Z3",
+	            53,
+	            FitContributor.DATA_TYPE_STRING,
+	            {:mesgType=>FitContributor.MESG_TYPE_SESSION, :count=>6}
+	        );
+	        zone4Field = createField(
+	            "Z4",
+	            54,
+	            FitContributor.DATA_TYPE_STRING,
+	            {:mesgType=>FitContributor.MESG_TYPE_SESSION, :count=>6}
+	        );
+	        zone5Field = createField(
+	            "Z5",
+	            55,
+	            FitContributor.DATA_TYPE_STRING,
+	            {:mesgType=>FitContributor.MESG_TYPE_SESSION, :count=>6}
+	        );
+	        
+	        zone1Field.setData("0:00");
+	        zone2Field.setData("0:00");
+	        zone3Field.setData("0:00");
+	        zone4Field.setData("0:00");
+	        zone5Field.setData("0:00");
+		}
+                
     }
 
 
@@ -199,39 +214,46 @@ class VSpeedView extends WatchUi.SimpleDataField {
         	intervalCounter =+ 1;
         }
         */
-        // record data for VSPD graph
-        if (vspd >= 0 or ! propAscentSpeedOnly) {
-        	vspdField.setData(vspd);
+
+        if (propEnableGraph) {
+        	// record data for VSPD graph
+	        if (vspd >= 0 or ! propAscentSpeedOnly) {
+	        	vspdField.setData(vspd);
+	        }
         }
         
-        // record LAP data for average ascend speed
-        if (vspd > AVG_VSPD_MIN_FOR_MOVEMENT) {
-        	avgVspdUp = (avgVspdUp * timeVspdUp + vspd * computeInterval) / (timeVspdUp + computeInterval);
-        	avgVspdUpField.setData(avgVspdUp);
-        
-        } else if (! propInMotion) {
-        	vspd = (vspd < 0) ? 0 : vspd;
-        	avgVspdUp = (avgVspdUp * timeVspdUp + vspd * computeInterval) / (timeVspdUp + computeInterval);
-        	avgVspdUpField.setData(avgVspdUp); 
+        if (propEnableLAPStatistic) {
+	        // record LAP data for average ascend speed
+	        if (vspd > AVG_VSPD_MIN_FOR_MOVEMENT) {
+	        	avgVspdUp = (avgVspdUp * timeVspdUp + vspd * computeInterval) / (timeVspdUp + computeInterval);
+	        	avgVspdUpField.setData(avgVspdUp);
+	        
+	        } else if (! propInMotion) {
+	        	vspd = (vspd < 0) ? 0 : vspd;
+	        	avgVspdUp = (avgVspdUp * timeVspdUp + vspd * computeInterval) / (timeVspdUp + computeInterval);
+	        	avgVspdUpField.setData(avgVspdUp); 
+	        }
         }
         
         
-        // Summary
-        if (vspd < propZone1) {
-        	zone1 += computeInterval;
-        	zone1Field.setData(secondsToTimeString(zone1));
-        } else if (vspd < propZone2) {
-        	zone2 += computeInterval;
-        	zone2Field.setData(secondsToTimeString(zone2));
-        } else if (vspd < propZone3) {
-        	zone3 += computeInterval;
-        	zone3Field.setData(secondsToTimeString(zone3));
-        } else if (vspd < propZone4) {
-        	zone4 += computeInterval;
-        	zone4Field.setData(secondsToTimeString(zone4));
-        } else {
-        	zone5 += computeInterval;
-        	zone5Field.setData(secondsToTimeString(zone5));
+        if (propEnableSummaryStatistic) {
+	        // record Zone summary
+	        if (vspd < propZone1) {
+	        	zone1 += computeInterval;
+	        	zone1Field.setData(secondsToTimeString(zone1));
+	        } else if (vspd < propZone2) {
+	        	zone2 += computeInterval;
+	        	zone2Field.setData(secondsToTimeString(zone2));
+	        } else if (vspd < propZone3) {
+	        	zone3 += computeInterval;
+	        	zone3Field.setData(secondsToTimeString(zone3));
+	        } else if (vspd < propZone4) {
+	        	zone4 += computeInterval;
+	        	zone4Field.setData(secondsToTimeString(zone4));
+	        } else {
+	        	zone5 += computeInterval;
+	        	zone5Field.setData(secondsToTimeString(zone5));
+	        }
         }
         
         
