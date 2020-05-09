@@ -1,0 +1,39 @@
+
+---
+Error: Not Enough Arguments Error
+Details: 'Failed invoking <symbol>'
+Time: 2019-12-12T11:35:17Z
+Part-Number: 006-B3290-00
+Firmware-Version: '5.00'
+Language-Code: deu
+ConnectIQ-Version: 3.1.5
+Filename: VSpeed
+Appname: VSpeed
+Stack: 
+  - pc: 0x10000258
+    File: /Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc
+    Line: 111
+    Function: logData
+  - pc: 0x10000145
+    File: /Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc
+    Line: 57
+    Function: compute
+---
+Error: Unexpected Type Error
+Details: 'Failed invoking <symbol>'
+Time: 2019-12-12T11:41:14Z
+Part-Number: 006-B3290-00
+Firmware-Version: '5.00'
+Language-Code: deu
+ConnectIQ-Version: 3.1.5
+Filename: VSpeed
+Appname: VSpeed
+Stack: 
+  - pc: 0x10000387
+    File: /Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc
+    Line: 113
+    Function: logData
+  - pc: 0x10000150
+    File: /Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc
+    Line: 57
+    Function: compute

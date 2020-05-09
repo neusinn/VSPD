@@ -10,4 +10,17 @@
     
     <string id="propAscentSpeedOnly">Record ascend speed only</string>
     <string id="propInMotion">LAP: Ø ascend speed when in motion only</string>
+    
+    <string id="propZone1">Zone 1</string>
+    <string id="propZone2">Zone 2</string>
+    <string id="propZone3">Zone 3</string>
+    <string id="propZone4">Zone 4</string>
+    
+    <string id="unit_duration">h:mm</string>
+    <string id="zone1_title">VSPD Z1</string>
+    <string id="zone2_title">VSPD Z2</string>
+    <string id="zone3_title">VSPD Z3</string>
+    <string id="zone4_title">VSPD Z4</string>
+    <string id="zone5_title">VSPD Z5</string>
+    
 </strings>

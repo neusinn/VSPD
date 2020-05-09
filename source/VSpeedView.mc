@@ -26,16 +26,15 @@ class VSpeedView extends WatchUi.SimpleDataField {
 	//const intervalRecordToFit = 5; // Interval to record data point to fit file
 	//var   intervalCounter = 0;
 	
+	private var lastComputeTime = 0;
 	// data array for measurements series.
 	private var queue = new [queueSize];
 	private var idx = 0;
 	
 	// datafield in FIT file
-	const VSPD_FIELD_ID = 47;
-	private var vspdField = null;	
+	private var vspdField;	
 	
-	const AVG_VSPD_UP_FIELD_ID = 48;
-	private var avgVspdUpField = null;
+	private var avgVspdUpField;
 	private var avgVspdUp = 0;
 	private var timeVspdUp = 0;
 	const AVG_VSPD_MIN_FOR_MOVEMENT = 50; // Minimal ascend speed for recording 
@@ -43,8 +42,24 @@ class VSpeedView extends WatchUi.SimpleDataField {
 	private var propAscentSpeedOnly = true;
 	private var propInMotion = true;
 	
-
+	private var propZone1 = 0;
+	private var propZone2 = 0;
+	private var propZone3 = 0;
+	private var propZone4 = 0;
+	private var propZone5 = 0;
 	
+	private var zone1Field;
+	private var zone2Field;
+	private var zone3Field;
+	private var zone4Field;
+	private var zone5Field;
+
+	private var zone1 = 0;
+	private var zone2 = 0;
+	private var zone3 = 0;
+	private var zone4 = 0;
+	private var zone5 = 0;
+		
 	//var TEST_PRESSURE = 94000;
 	//var TEST_COUNTER = 0;
 	
@@ -55,25 +70,76 @@ class VSpeedView extends WatchUi.SimpleDataField {
         SimpleDataField.initialize();
         label =  WatchUi.loadResource(Rez.Strings.vspd_label) + " " +  WatchUi.loadResource(Rez.Strings.vspd_unit); // The displayed label of the data field.
         
+        lastComputeTime = 0;
         propAscentSpeedOnly = Application.Properties.getValue("propAscentSpeedOnly");
         propInMotion = Application.Properties.getValue("propInMotion");
+        
+        propZone1 = Application.Properties.getValue("propZone1");
+        propZone2 = Application.Properties.getValue("propZone2");
+        propZone3 = Application.Properties.getValue("propZone3");
+        propZone4 = Application.Properties.getValue("propZone4");
+        
+        propZone2 = (propZone1 < propZone2) ? propZone2 : propZone1 + 1;
+        propZone3 = (propZone2 < propZone3) ? propZone3 : propZone2 + 1;
+        propZone4 = (propZone3 < propZone4) ? propZone4 : propZone3 + 1;
+ 
+        
+        avgVspdUpField = createField(
+            "avgVspdAscent",
+            48,
+            FitContributor.DATA_TYPE_SINT16,
+            {:mesgType=>FitContributor.MESG_TYPE_LAP, :units=>"m/h"}
+        );
         
         // Create the custom FIT data field to record vertical speed.
         vspdField = createField(
             "vspd",
-            VSPD_FIELD_ID,
-            FitContributor.DATA_TYPE_SINT32,
+            47,
+            FitContributor.DATA_TYPE_SINT16,
             {:mesgType=>FitContributor.MESG_TYPE_RECORD, :units=>"m/h"}
         );
         
-        avgVspdUpField = createField(
-            "avgVspdAscent",
-            AVG_VSPD_UP_FIELD_ID,
-            FitContributor.DATA_TYPE_SINT32,
-            {:mesgType=>FitContributor.MESG_TYPE_LAP, :units=>"m/h"}
+        zone1Field = createField(
+            "Z1",
+            51,
+            FitContributor.DATA_TYPE_STRING,
+            {:mesgType=>FitContributor.MESG_TYPE_SESSION, :count=>6}
         );
+        zone2Field = createField(
+            "Z2",
+            52,
+            FitContributor.DATA_TYPE_STRING,
+            {:mesgType=>FitContributor.MESG_TYPE_SESSION, :count=>6}
+        );
+        zone3Field = createField(
+            "Z3",
+            53,
+            FitContributor.DATA_TYPE_STRING,
+            {:mesgType=>FitContributor.MESG_TYPE_SESSION, :count=>6}
+        );
+        zone4Field = createField(
+            "Z4",
+            54,
+            FitContributor.DATA_TYPE_STRING,
+            {:mesgType=>FitContributor.MESG_TYPE_SESSION, :count=>6}
+        );
+        zone5Field = createField(
+            "Z5",
+            55,
+            FitContributor.DATA_TYPE_STRING,
+            {:mesgType=>FitContributor.MESG_TYPE_SESSION, :count=>6}
+        );
+
+                
+        // Initalize field data
+        vspdField.setData(0);
+        avgVspdUpField.setData(0);
         
-        vspdField.setData(0.0);
+        zone1Field.setData("0:00");
+        zone2Field.setData("0:00");
+        zone3Field.setData("0:00");
+        zone4Field.setData("0:00");
+        zone5Field.setData("0:00");
     }
 
 
@@ -96,6 +162,13 @@ class VSpeedView extends WatchUi.SimpleDataField {
 
 		var time = Time.now();
 		var height = calcHeightFromPressure(p);	
+		
+		var computeInterval;
+		if ( lastComputeTime != 0) {
+			computeInterval = time.subtract(lastComputeTime);
+		} else {
+			computeInterval = 1;
+		}
 
 		// Exponentially Weighted Moving Average (EWMA)
 		var newestDataPoint = readNewestEntryFromQueue();
@@ -127,28 +200,56 @@ class VSpeedView extends WatchUi.SimpleDataField {
         }
         */
         // record data for VSPD graph
-        if (vspd > 0 or ! propAscentSpeedOnly) {
+        if (vspd >= 0 or ! propAscentSpeedOnly) {
         	vspdField.setData(vspd);
         }
         
         // record LAP data for average ascend speed
         if (vspd > AVG_VSPD_MIN_FOR_MOVEMENT) {
-        	avgVspdUp = (avgVspdUp * timeVspdUp + vspd * deltaTime) / (timeVspdUp + deltaTime);
+        	avgVspdUp = (avgVspdUp * timeVspdUp + vspd * computeInterval) / (timeVspdUp + computeInterval);
         	avgVspdUpField.setData(avgVspdUp);
         
         } else if (! propInMotion) {
         	vspd = (vspd < 0) ? 0 : vspd;
-        	avgVspdUp = (avgVspdUp * timeVspdUp + vspd * deltaTime) / (timeVspdUp + deltaTime);
+        	avgVspdUp = (avgVspdUp * timeVspdUp + vspd * computeInterval) / (timeVspdUp + computeInterval);
         	avgVspdUpField.setData(avgVspdUp); 
         }
+        
+        
+        // Summary
+        if (vspd < propZone1) {
+        	zone1 += computeInterval;
+        	zone1Field.setData(secondsToTimeString(zone1));
+        } else if (vspd < propZone2) {
+        	zone2 += computeInterval;
+        	zone2Field.setData(secondsToTimeString(zone2));
+        } else if (vspd < propZone3) {
+        	zone3 += computeInterval;
+        	zone3Field.setData(secondsToTimeString(zone3));
+        } else if (vspd < propZone4) {
+        	zone4 += computeInterval;
+        	zone4Field.setData(secondsToTimeString(zone4));
+        } else {
+        	zone5 += computeInterval;
+        	zone5Field.setData(secondsToTimeString(zone5));
+        }
+        
         
         // round VSPD on the next 10m/h
         vspd = (Math.round(vspd / 10) * 10).toNumber();
         
        	return vspd;
     }
+
     
-     
+    function secondsToTimeString(timeInSeconds) {
+    	var hours = timeInSeconds / 3600;
+		var minutes = (timeInSeconds / 60) % 60;
+		var timeString = format("$1$:$2$", [hours.format("%2d"), minutes.format("%02d")]);
+	return timeString;
+    } 
+ 
+ 
     function calcHeightFromPressure(p) {
         /*
         	P current barometric pressure (Pa)

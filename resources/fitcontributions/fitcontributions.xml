@@ -1,10 +1,33 @@
 <fitContributions>
-	<fitField id="47" sortOrder = "0" precision="0"
+	<fitField id="47" sortOrder="0" precision="0"
 	    displayInChart="true" 
 		chartTitle="@Strings.vspd_chart_title" fillColor="#0055aa"
 		dataLabel="@Strings.vspd_label" unitLabel="@Strings.vspd_unit" />
 		
-	<fitField id="48" sortOrder = "1" precision="0"
-	    displayInChart="false" displayInActivityLaps="true"
+		
+	<fitField id="48" sortOrder="1" precision="0"
+	    displayInActivityLaps="true"
 		dataLabel="@Strings.avg_vspd_title" unitLabel="@Strings.vspd_unit" />
+
+
+	<fitField id="51" sortOrder="11"
+	    displayInActivitySummary="true" 
+		dataLabel="@Strings.zone1_title" unitLabel="@Strings.unit_duration" />
+
+	<fitField id="52" sortOrder="12"
+	    displayInActivitySummary="true"
+		dataLabel="@Strings.zone2_title" unitLabel="@Strings.unit_duration" />
+		
+	<fitField id="53" sortOrder="13"
+	    displayInActivitySummary="true"
+		dataLabel="@Strings.zone3_title" unitLabel="@Strings.unit_duration" />
+		
+	<fitField id="54" sortOrder="14"
+	    displayInActivitySummary="true"
+		dataLabel="@Strings.zone4_title" unitLabel="@Strings.unit_duration" />
+
+	<fitField id="55" sortOrder="15"
+	    displayInActivitySummary="true"
+		dataLabel="@Strings.zone5_title" unitLabel="@Strings.unit_duration" />
+						
 </fitContributions>

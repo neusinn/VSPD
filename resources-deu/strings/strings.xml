@@ -5,9 +5,22 @@
     <string id="vspd_label">VSPD</string>
     <string id="vspd_unit">m/h</string>
     
-    <string id="avg_vspd_title">Ø Vertikalgeschwindigkeit in Bewegung</string>
+    <string id="avg_vspd_title">Ø Vertikalgeschwindigkeit</string>
     <string id="avg_vspd_label">Ø VSPD</string>
     
     <string id="propAscentSpeedOnly">Nur Steiggeschwindikeit aufzeichnen</string>
-    <string id="propInMotion">LAP: Ø Steiggeschwindikeit wenn in Bewegung</string>
+    <string id="propInMotion">LAP: Ø Steiggeschwindikeit nur wenn in Bewegung</string>
+    
+    <string id="propZone1">Bereich 1</string>
+    <string id="propZone2">Bereich 2</string>
+    <string id="propZone3">Bereich 3</string>
+    <string id="propZone4">Bereich 4</string>
+    
+    <string id="unit_duration">h:mm</string>
+    <string id="zone1_title">VSPD Z1</string>
+    <string id="zone2_title">VSPD Z2</string>
+    <string id="zone3_title">VSPD Z3</string>
+    <string id="zone4_title">VSPD Z4</string>
+    <string id="zone5_title">VSPD Z5</string>
+
 </strings>

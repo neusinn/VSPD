@@ -2,4 +2,9 @@
 	<property id="propAscentSpeedOnly" type="boolean">true</property>
 	<property id="propInMotion" type="boolean">true</property>
 	
+	<property id="propZone1" type="number">50</property>
+	<property id="propZone2" type="number">400</property>
+	<property id="propZone3" type="number">550</property>
+	<property id="propZone4" type="number">700</property>
+	
 </properties>

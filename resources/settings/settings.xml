@@ -6,4 +6,17 @@
 		<settingConfig type="boolean" />
 	</setting>
 
+	<setting propertyKey = "@Properties.propZone1" title = "@Strings.propZone1">
+		<settingConfig type="numeric" />
+	</setting>
+	<setting propertyKey = "@Properties.propZone2" title = "@Strings.propZone2">
+		<settingConfig type="numeric" />
+	</setting>
+	<setting propertyKey = "@Properties.propZone3" title = "@Strings.propZone3">
+		<settingConfig type="numeric" />
+	</setting>
+	<setting propertyKey = "@Properties.propZone4" title = "@Strings.propZone4">
+		<settingConfig type="numeric" />
+	</setting>
+
 </settings>
