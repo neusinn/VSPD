@@ -8,17 +8,17 @@
     <string id="avg_vspd_title">Ø Vertikalgeschwindigkeit</string>
     <string id="avg_vspd_label">Ø VSPD</string>
     
-    <string id="propEnableGraph">Zeige VSPD als Grafik</string>
-    <string id="propEnableLAPStatistic">Zeige VSPD in LAP</string>
-	<string id="propEnableSummaryStatistic">Zeige VSPD Zonen in Statistik</string>
+    <string id="propEnableGraph">Speichere VSPD und präsentiere Grafik</string>
+    <string id="propEnableLAPStatistic">Zeige Ø Steiggeschwindigkeit in LAP</string>
+	<string id="propEnableSummaryStatistic">Zeige Steiggeschwindigkeits-Zonen Statistik</string>
     
-    <string id="propAscentSpeedOnly">Nur Steiggeschwindikeit aufzeichnen</string>
-    <string id="propInMotion">LAP: Ø Steiggeschwindikeit nur wenn in Bewegung</string>
+    <string id="propAscentSpeedOnly">Nur Steiggeschwindigkeit aufzeichnen</string>
+    <string id="propInMotion">LAP: Ø Steiggeschwindigkeit nur über Zeit wenn in Bewegung</string>
     
-    <string id="propZone1">Bereich 1</string>
-    <string id="propZone2">Bereich 2</string>
-    <string id="propZone3">Bereich 3</string>
-    <string id="propZone4">Bereich 4</string>
+    <string id="propZone1">VSPD Zone 1 bis [m/h]</string>
+    <string id="propZone2">VSPD Zone 2 bis [m/h]</string>
+    <string id="propZone3">VSPD Zone 3 bis [m/h]</string>
+    <string id="propZone4">VSPD Zone 4 bis [m/h]</string>
     
     <string id="unit_duration">h:mm</string>
     <string id="zone1_title">VSPD Z1</string>
