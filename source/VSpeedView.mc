@@ -200,7 +200,8 @@ class VSpeedView extends WatchUi.SimpleDataField {
         
         // DEBUG logData(info, vspd, height, height - dataPoint[:height], deltaTime);
         
-        // Supress VSPD values < |20|  
+        // Supress VSPD values < |20| 
+        // This reduce noi 
         if (vspd < 20 and vspd > -20) {
         	vspd = 0;
         }
@@ -234,7 +235,6 @@ class VSpeedView extends WatchUi.SimpleDataField {
 	        	avgVspdUpField.setData(avgVspdUp); 
 	        }
         }
-        
         
         if (propEnableSummaryStatistic) {
 	        // record Zone summary
