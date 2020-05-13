@@ -19,10 +19,13 @@ using Toybox.FitContributor;
 */
 class VSpeedView extends WatchUi.SimpleDataField {
 
-	// measure time period in seconds to calculate speed
-	const timePeriodInSec = 30;
+	
+	const timePeriodInSec = 30;				// measure time period in seconds to calculate speed
 	const queueSize = timePeriodInSec;
-	const factorEWMA = 0.1;
+	const factorEWMA = 0.1;					// factor for Exponentially Weighted Moving Average (EWMA)
+	const AVG_VSPD_MIN_FOR_MOVEMENT = 50; 	// Minimal ascend speed for recording 
+	const MIN_VSPD = 20;
+	
 	//const intervalRecordToFit = 5; // Interval to record data point to fit file
 	//var   intervalCounter = 0;
 	
@@ -37,7 +40,6 @@ class VSpeedView extends WatchUi.SimpleDataField {
 	private var avgVspdUpField;
 	private var avgVspdUp = 0;
 	private var timeVspdUp = 0;
-	const AVG_VSPD_MIN_FOR_MOVEMENT = 50; // Minimal ascend speed for recording 
 	
 	private var propEnableGraph;
 	private var propEnableLAPStatistic;
@@ -200,9 +202,9 @@ class VSpeedView extends WatchUi.SimpleDataField {
         
         // DEBUG logData(info, vspd, height, height - dataPoint[:height], deltaTime);
         
-        // Supress VSPD values < |20| 
-        // This reduce noi 
-        if (vspd < 20 and vspd > -20) {
+        // Supress VSPD values < |MIN_VSPD| 
+        // This reduce noise  
+        if (vspd < MIN_VSPD and vspd > - MIN_VSPD) {
         	vspd = 0;
         }
         

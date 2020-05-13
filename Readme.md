@@ -13,6 +13,9 @@ Also known as: Variometer, rate of climb and descent indicator (RCDI), rate-of-c
 1. VSPD is a data field that shows the vertical speed in [m/h]. 
 2. VSPD records the vertical speed data to the FIT-file when used during an activity. 
 3. The VSPD recorded data will be presented as a graph when displaying your Activity in the Garmin Connect Website.
+4. Record Ø ascent speed in LAP statistic.
+5. Record time in speed zones in summary statistic.
+6. Add settings to configure what data should be recorded and shown. 
 
 ### Contact the Developer
 
@@ -34,8 +37,17 @@ d) VSPD is rounded on 10 m/h.
 e) The measurement is done every second.
 f) VSPD values < |20| m/h are set to 0
 
+## Configurations
+
+- Enable VSPD recording and graph
+- Enable 0 ascent speed in LAP
+- Enable ascend speed zones statistic
+- Record ascend speed only (suppress descent speed, this can improve readability)
+- LAP: Ø ascend speed calculate during ascend only 
+
 
 # Release Notes
 
 v 0.5.0 Initial version
-v 0.6.0 Correct units. Improved Algorithm. Changed graph color to Cobalt.
+v 0.6.0 Correct units. Improved Algorithm. Changed graph color to Cobalt blue.
+v 0.7.0 New Functionality: Configurable in settings. Add Ø ascent speed in LAP. Add time in speed zones in summary statistic.
