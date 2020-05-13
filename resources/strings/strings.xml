@@ -5,14 +5,14 @@
     <string id="vspd_label">VSPD</string>
     <string id="vspd_unit">m/h</string>
     
-    <string id="avg_vspd_title">Ø ascend speed in motion</string>
+    <string id="avg_vspd_title">Ø ascend speed</string>
     <string id="avg_vspd_label">Ø VSPD</string>
     
     <string id="propEnableGraph">Enable VSPD recording and graph</string>
     <string id="propEnableLAPStatistic">Enable Ø ascent speed in LAP</string>
 	<string id="propEnableSummaryStatistic">Enable ascent speed zone statistic</string>
     <string id="propAscentSpeedOnly">Record ascend speed only</string>
-    <string id="propInMotion">LAP: Ø ascend speed when in motion only</string>
+    <string id="propInMotion">LAP Ø ascend speed: calculate during ascend only</string>
     
     <string id="propZone1">VSPD Zone 1 up to [m/h]</string>
     <string id="propZone2">VSPD Zone 2 up to [m/h]</string>

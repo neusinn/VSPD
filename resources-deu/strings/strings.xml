@@ -13,7 +13,7 @@
 	<string id="propEnableSummaryStatistic">Zeige Steiggeschwindigkeits-Zonen Statistik</string>
     
     <string id="propAscentSpeedOnly">Nur Steiggeschwindigkeit aufzeichnen</string>
-    <string id="propInMotion">LAP: Ø Steiggeschwindigkeit nur über Zeit wenn in Bewegung</string>
+    <string id="propInMotion">LAP Ø Steiggeschwindigkeit: nur während des Anstiegs</string>
     
     <string id="propZone1">VSPD Zone 1 bis [m/h]</string>
     <string id="propZone2">VSPD Zone 2 bis [m/h]</string>
