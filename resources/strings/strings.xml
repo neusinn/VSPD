@@ -1,5 +1,5 @@
 <strings>
-    <string id="AppName">VSpeed Beta</string>
+    <string id="AppName">VSpeed</string>
     
     <string id="vspd_chart_title">Vertical Speed [m/h]</string>
     <string id="vspd_label">VSPD</string>
