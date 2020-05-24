@@ -22,12 +22,10 @@ class VSpeedView extends WatchUi.SimpleDataField {
 	
 	const timePeriodInSec = 30;				// measure time period in seconds to calculate speed
 	const queueSize = timePeriodInSec;
-	const factorEWMA = 0.1;					// factor for Exponentially Weighted Moving Average (EWMA)
+	const factorEWMA = 0.15;					// factor for Exponentially Weighted Moving Average (EWMA)
 	const AVG_VSPD_MIN_FOR_MOVEMENT = 50; 	// Minimal ascend speed for recording 
 	const MIN_VSPD = 20;
-	
-	//const intervalRecordToFit = 5; // Interval to record data point to fit file
-	//var   intervalCounter = 0;
+
 	
 	private var lastComputeTime = 0;
 	// data array for measurements series.
@@ -65,9 +63,6 @@ class VSpeedView extends WatchUi.SimpleDataField {
 	private var zone3 = 0;
 	private var zone4 = 0;
 	private var zone5 = 0;
-		
-	//var TEST_PRESSURE = 94000;
-	//var TEST_COUNTER = 0;
 	
 	var mSession;
     
@@ -171,21 +166,16 @@ class VSpeedView extends WatchUi.SimpleDataField {
 
 		var p = info.ambientPressure;
 		
-		// TODO remove after test
-		//p = TEST_PRESSURE;
-		//TEST_PRESSURE -= 10;
-		
 		if (p == null) { return "n/a"; }
 
 		var time = Time.now();
 		var height = calcHeightFromPressure(p);	
 		
-		var computeInterval;
+		var computeInterval = 1;
 		if ( lastComputeTime != 0) {
-			computeInterval = time.subtract(lastComputeTime);
-		} else {
-			computeInterval = 1;
+			computeInterval = time.subtract(lastComputeTime).value();
 		}
+		lastComputeTime = time;
 
 		// Exponentially Weighted Moving Average (EWMA)
 		var newestDataPoint = readNewestEntryFromQueue();
@@ -207,16 +197,7 @@ class VSpeedView extends WatchUi.SimpleDataField {
         if (vspd < MIN_VSPD and vspd > - MIN_VSPD) {
         	vspd = 0;
         }
-        
-        /* reduce entries
-        // write vspdField to activity reccord
-        if (intervalCounter >= intervalRecordToFit) {
-        	vspdField.setData(vspd);
-        	intervalCounter = 0;
-        } else {
-        	intervalCounter =+ 1;
-        }
-        */
+
 
         if (propEnableGraph) {
         	// record data for VSPD graph
@@ -229,12 +210,14 @@ class VSpeedView extends WatchUi.SimpleDataField {
 	        // record LAP data for average ascend speed
 	        if (vspd > AVG_VSPD_MIN_FOR_MOVEMENT) {
 	        	avgVspdUp = (avgVspdUp * timeVspdUp + vspd * computeInterval) / (timeVspdUp + computeInterval);
+	        	timeVspdUp = timeVspdUp + computeInterval;
 	        	avgVspdUpField.setData(avgVspdUp);
 	        
 	        } else if (! propInMotion) {
-	        	vspd = (vspd < 0) ? 0 : vspd;
+	        	vspd = (vspd < 0) ? 0 : vspd; // Ignore descent vor
 	        	avgVspdUp = (avgVspdUp * timeVspdUp + vspd * computeInterval) / (timeVspdUp + computeInterval);
-	        	avgVspdUpField.setData(avgVspdUp); 
+	 	        timeVspdUp = timeVspdUp + computeInterval;
+	        	avgVspdUpField.setData(avgVspdUp);
 	        }
         }
         

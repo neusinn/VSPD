@@ -7,113 +7,115 @@
 <entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedApp.mc" id="5" lineNum="14" pc="268435484" symbol="onStop"/>
 <entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedApp.mc" id="6" lineNum="18" pc="268435489" symbol="getInitialView"/>
 <entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedApp.mc" id="6" lineNum="19" pc="268435493" symbol="getInitialView"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="74" pc="268435531" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="76" pc="268435535" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="77" pc="268435553" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="79" pc="268435638" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="81" pc="268435651" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="82" pc="268435687" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="83" pc="268435723" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="85" pc="268435759" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="86" pc="268435795" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="88" pc="268435831" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="89" pc="268435867" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="90" pc="268435903" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="91" pc="268435939" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="93" pc="268435975" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="94" pc="268436028" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="95" pc="268436081" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="98" pc="268436134" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="100" pc="268436145" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="107" pc="268436225" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="110" pc="268436251" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="111" pc="268436262" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="118" pc="268436342" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="121" pc="268436368" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="122" pc="268436379" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="128" pc="268436459" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="134" pc="268436539" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="140" pc="268436619" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="146" pc="268436699" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="153" pc="268436779" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="154" pc="268436802" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="155" pc="268436825" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="156" pc="268436848" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="157" pc="268436871" symbol="initialize"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="168" pc="268436898" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="172" pc="268436902" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="178" pc="268436912" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="178" pc="268436919" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="180" pc="268436928" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="181" pc="268436947" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="183" pc="268436962" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="184" pc="268436962" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="185" pc="268436979" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="187" pc="268437003" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="191" pc="268437010" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="192" pc="268437023" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="193" pc="268437030" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="196" pc="268437070" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="197" pc="268437109" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="197" pc="268437116" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="200" pc="268437125" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="201" pc="268437155" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="207" pc="268437177" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="208" pc="268437214" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="221" pc="268437224" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="223" pc="268437235" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="224" pc="268437261" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="228" pc="268437287" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="230" pc="268437298" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="231" pc="268437312" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="232" pc="268437355" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="234" pc="268437384" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="235" pc="268437396" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="236" pc="268437419" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="237" pc="268437462" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="241" pc="268437494" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="243" pc="268437505" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="244" pc="268437519" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="245" pc="268437535" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="246" pc="268437575" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="247" pc="268437589" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="248" pc="268437605" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="249" pc="268437645" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="250" pc="268437659" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="251" pc="268437675" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="252" pc="268437715" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="253" pc="268437729" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="254" pc="268437745" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="256" pc="268437785" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="257" pc="268437801" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="263" pc="268437841" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="265" pc="268437881" symbol="compute"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="10" lineNum="269" pc="268437885" symbol="secondsToTimeString"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="10" lineNum="270" pc="268437889" symbol="secondsToTimeString"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="10" lineNum="271" pc="268437899" symbol="secondsToTimeString"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="10" lineNum="272" pc="268437915" symbol="secondsToTimeString"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="10" lineNum="273" pc="268437987" symbol="secondsToTimeString"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="11" lineNum="277" pc="268437991" symbol="calcHeightFromPressure"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="11" lineNum="291" pc="268437995" symbol="calcHeightFromPressure"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="11" lineNum="291" pc="268438002" symbol="calcHeightFromPressure"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="11" lineNum="293" pc="268438011" symbol="calcHeightFromPressure"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="11" lineNum="294" pc="268438018" symbol="calcHeightFromPressure"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="11" lineNum="295" pc="268438025" symbol="calcHeightFromPressure"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="11" lineNum="297" pc="268438056" symbol="calcHeightFromPressure"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="12" lineNum="301" pc="268438060" symbol="fifoQueue"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="12" lineNum="302" pc="268438064" symbol="fifoQueue"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="12" lineNum="303" pc="268438083" symbol="fifoQueue"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="12" lineNum="303" pc="268438103" symbol="fifoQueue"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="12" lineNum="305" pc="268438119" symbol="fifoQueue"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="12" lineNum="306" pc="268438138" symbol="fifoQueue"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="12" lineNum="307" pc="268438157" symbol="fifoQueue"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="13" lineNum="310" pc="268438161" symbol="readNewestEntryFromQueue"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="13" lineNum="311" pc="268438165" symbol="readNewestEntryFromQueue"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="14" lineNum="316" pc="268438184" symbol="logTitles"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="14" lineNum="317" pc="268438188" symbol="logTitles"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="15" lineNum="328" pc="268438254" symbol="logData"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="15" lineNum="329" pc="268438258" symbol="logData"/>
-<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="15" lineNum="330" pc="268438277" symbol="logData"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="69" pc="268435531" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="71" pc="268435535" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="72" pc="268435553" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="74" pc="268435638" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="76" pc="268435651" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="77" pc="268435687" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="78" pc="268435723" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="80" pc="268435759" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="81" pc="268435795" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="83" pc="268435831" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="84" pc="268435867" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="85" pc="268435903" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="86" pc="268435939" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="88" pc="268435975" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="89" pc="268436028" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="90" pc="268436081" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="93" pc="268436134" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="95" pc="268436145" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="102" pc="268436225" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="105" pc="268436251" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="106" pc="268436262" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="113" pc="268436342" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="116" pc="268436368" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="117" pc="268436379" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="123" pc="268436459" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="129" pc="268436539" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="135" pc="268436619" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="141" pc="268436699" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="148" pc="268436779" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="149" pc="268436802" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="150" pc="268436825" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="151" pc="268436848" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="8" lineNum="152" pc="268436871" symbol="initialize"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="163" pc="268436898" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="167" pc="268436902" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="169" pc="268436912" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="169" pc="268436919" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="171" pc="268436928" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="172" pc="268436947" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="174" pc="268436962" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="175" pc="268436969" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="176" pc="268436986" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="178" pc="268437019" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="181" pc="268437029" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="182" pc="268437042" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="183" pc="268437049" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="186" pc="268437089" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="187" pc="268437128" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="187" pc="268437135" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="190" pc="268437144" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="191" pc="268437174" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="197" pc="268437196" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="198" pc="268437233" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="202" pc="268437243" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="204" pc="268437254" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="205" pc="268437280" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="209" pc="268437306" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="211" pc="268437317" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="212" pc="268437331" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="213" pc="268437374" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="214" pc="268437393" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="216" pc="268437422" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="217" pc="268437434" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="218" pc="268437457" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="219" pc="268437500" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="220" pc="268437519" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="224" pc="268437551" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="226" pc="268437562" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="227" pc="268437576" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="228" pc="268437592" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="229" pc="268437632" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="230" pc="268437646" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="231" pc="268437662" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="232" pc="268437702" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="233" pc="268437716" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="234" pc="268437732" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="235" pc="268437772" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="236" pc="268437786" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="237" pc="268437802" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="239" pc="268437842" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="240" pc="268437858" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="246" pc="268437898" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="9" lineNum="248" pc="268437938" symbol="compute"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="10" lineNum="252" pc="268437942" symbol="secondsToTimeString"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="10" lineNum="253" pc="268437946" symbol="secondsToTimeString"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="10" lineNum="254" pc="268437956" symbol="secondsToTimeString"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="10" lineNum="255" pc="268437972" symbol="secondsToTimeString"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="10" lineNum="256" pc="268438044" symbol="secondsToTimeString"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="11" lineNum="260" pc="268438048" symbol="calcHeightFromPressure"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="11" lineNum="274" pc="268438052" symbol="calcHeightFromPressure"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="11" lineNum="274" pc="268438059" symbol="calcHeightFromPressure"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="11" lineNum="276" pc="268438068" symbol="calcHeightFromPressure"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="11" lineNum="277" pc="268438075" symbol="calcHeightFromPressure"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="11" lineNum="278" pc="268438082" symbol="calcHeightFromPressure"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="11" lineNum="280" pc="268438113" symbol="calcHeightFromPressure"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="12" lineNum="284" pc="268438117" symbol="fifoQueue"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="12" lineNum="285" pc="268438121" symbol="fifoQueue"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="12" lineNum="286" pc="268438140" symbol="fifoQueue"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="12" lineNum="286" pc="268438160" symbol="fifoQueue"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="12" lineNum="288" pc="268438176" symbol="fifoQueue"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="12" lineNum="289" pc="268438195" symbol="fifoQueue"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="12" lineNum="290" pc="268438214" symbol="fifoQueue"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="13" lineNum="293" pc="268438218" symbol="readNewestEntryFromQueue"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="13" lineNum="294" pc="268438222" symbol="readNewestEntryFromQueue"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="14" lineNum="299" pc="268438241" symbol="logTitles"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="14" lineNum="300" pc="268438245" symbol="logTitles"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="15" lineNum="311" pc="268438311" symbol="logData"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="15" lineNum="312" pc="268438315" symbol="logData"/>
+<entry filename="/Users/vonallmen/dev/workspaceEclipse/VSpeed/source/VSpeedView.mc" id="15" lineNum="313" pc="268438334" symbol="logData"/>
 </pcToLineNum>
 <symbolTable>
 <entry field="true" id="39" symbol="MIN_VSPD"/>
@@ -206,31 +208,31 @@
 <localVars>
 <entry endPc="268435484" name="state" stackId="1" startPc="268435479"/>
 <entry endPc="268435489" name="state" stackId="1" startPc="268435484"/>
-<entry endPc="268437884" name="height" stackId="4" startPc="268436902"/>
-<entry endPc="268437884" name="dataPoint" stackId="7" startPc="268436902"/>
-<entry endPc="268437884" name="vspd" stackId="9" startPc="268436902"/>
-<entry endPc="268437884" name="deltaTime" stackId="8" startPc="268436902"/>
-<entry endPc="268437884" name="computeInterval" stackId="5" startPc="268436902"/>
-<entry endPc="268437884" name="time" stackId="3" startPc="268436902"/>
-<entry endPc="268437884" name="p" stackId="2" startPc="268436902"/>
-<entry endPc="268437884" name="newestDataPoint" stackId="6" startPc="268436902"/>
-<entry endPc="268437885" name="info" stackId="1" startPc="268436898"/>
-<entry endPc="268437990" name="hours" stackId="2" startPc="268437889"/>
-<entry endPc="268437990" name="minutes" stackId="3" startPc="268437889"/>
-<entry endPc="268437990" name="timeString" stackId="4" startPc="268437889"/>
-<entry endPc="268437991" name="timeInSeconds" stackId="1" startPc="268437885"/>
-<entry endPc="268438059" name="Po" stackId="2" startPc="268437995"/>
-<entry endPc="268438059" name="h" stackId="4" startPc="268437995"/>
-<entry endPc="268438059" name="c" stackId="3" startPc="268437995"/>
-<entry endPc="268438060" name="p" stackId="1" startPc="268437991"/>
-<entry endPc="268438160" name="out" stackId="2" startPc="268438064"/>
-<entry endPc="268438161" name="in" stackId="1" startPc="268438060"/>
-<entry endPc="268438498" name="time" stackId="6" startPc="268438258"/>
-<entry endPc="268438499" name="height" stackId="3" startPc="268438254"/>
-<entry endPc="268438499" name="deltaTime" stackId="5" startPc="268438254"/>
-<entry endPc="268438499" name="vspd" stackId="2" startPc="268438254"/>
-<entry endPc="268438499" name="info" stackId="1" startPc="268438254"/>
-<entry endPc="268438499" name="deltaHeight" stackId="4" startPc="268438254"/>
+<entry endPc="268437941" name="height" stackId="4" startPc="268436902"/>
+<entry endPc="268437941" name="dataPoint" stackId="7" startPc="268436902"/>
+<entry endPc="268437941" name="vspd" stackId="9" startPc="268436902"/>
+<entry endPc="268437941" name="deltaTime" stackId="8" startPc="268436902"/>
+<entry endPc="268437941" name="computeInterval" stackId="5" startPc="268436902"/>
+<entry endPc="268437941" name="time" stackId="3" startPc="268436902"/>
+<entry endPc="268437941" name="p" stackId="2" startPc="268436902"/>
+<entry endPc="268437941" name="newestDataPoint" stackId="6" startPc="268436902"/>
+<entry endPc="268437942" name="info" stackId="1" startPc="268436898"/>
+<entry endPc="268438047" name="hours" stackId="2" startPc="268437946"/>
+<entry endPc="268438047" name="minutes" stackId="3" startPc="268437946"/>
+<entry endPc="268438047" name="timeString" stackId="4" startPc="268437946"/>
+<entry endPc="268438048" name="timeInSeconds" stackId="1" startPc="268437942"/>
+<entry endPc="268438116" name="Po" stackId="2" startPc="268438052"/>
+<entry endPc="268438116" name="h" stackId="4" startPc="268438052"/>
+<entry endPc="268438116" name="c" stackId="3" startPc="268438052"/>
+<entry endPc="268438117" name="p" stackId="1" startPc="268438048"/>
+<entry endPc="268438217" name="out" stackId="2" startPc="268438121"/>
+<entry endPc="268438218" name="in" stackId="1" startPc="268438117"/>
+<entry endPc="268438555" name="time" stackId="6" startPc="268438315"/>
+<entry endPc="268438556" name="height" stackId="3" startPc="268438311"/>
+<entry endPc="268438556" name="deltaTime" stackId="5" startPc="268438311"/>
+<entry endPc="268438556" name="vspd" stackId="2" startPc="268438311"/>
+<entry endPc="268438556" name="info" stackId="1" startPc="268438311"/>
+<entry endPc="268438556" name="deltaHeight" stackId="4" startPc="268438311"/>
 </localVars>
 <annotations>
 <annotationEntry annotation="debug" class="VSpeedView" module="globals" symbol="logTitles"/>
