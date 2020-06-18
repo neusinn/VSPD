@@ -243,16 +243,12 @@ class VSpeedView extends WatchUi.SimpleDataField {
 	        	avgVspdUpField.setData(avgVspdUp);
 	        }
 	        
-	        /*
+
 	        // supress values if ascent is less than a minimum since LAP start
-	        if (info.totalAscent == null) {
-	        System.println("==> info.totalAscent == null");
-	        }
 	        var totalActivityAscent = (info.totalAscent == null) ? 0 : info.totalAscent;
-	        if (totalActivityAscent - totalAscentOnLapStart > MIN_LAP_ASCENT) {
+	        if (totalActivityAscent - totalAscentOnLapStart < MIN_LAP_ASCENT) {
 	        	avgVspdUpField.setData(0);
 	        }
-	        */
         }
         
         if (propEnableSummaryStatistic) {

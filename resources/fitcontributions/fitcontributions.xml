@@ -10,11 +10,11 @@
 		dataLabel="@Strings.avg_vspd_title" unitLabel="@Strings.vspd_unit" />
 
 
-	<fitField id="51" sortOrder="11"
+	<fitField id="51" sortOrder="15"
 	    displayInActivitySummary="true" 
 		dataLabel="@Strings.zone1_title" unitLabel="@Strings.unit_duration" />
 
-	<fitField id="52" sortOrder="12"
+	<fitField id="52" sortOrder="14"
 	    displayInActivitySummary="true"
 		dataLabel="@Strings.zone2_title" unitLabel="@Strings.unit_duration" />
 		
@@ -22,11 +22,11 @@
 	    displayInActivitySummary="true"
 		dataLabel="@Strings.zone3_title" unitLabel="@Strings.unit_duration" />
 		
-	<fitField id="54" sortOrder="14"
+	<fitField id="54" sortOrder="12"
 	    displayInActivitySummary="true"
 		dataLabel="@Strings.zone4_title" unitLabel="@Strings.unit_duration" />
 
-	<fitField id="55" sortOrder="15"
+	<fitField id="55" sortOrder="11"
 	    displayInActivitySummary="true"
 		dataLabel="@Strings.zone5_title" unitLabel="@Strings.unit_duration" />
 						
