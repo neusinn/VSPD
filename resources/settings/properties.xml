@@ -3,7 +3,7 @@
 	<property id ="propEnableLAPStatistic" type="boolean">true</property>
 	<property id ="propEnableSummaryStatistic" type="boolean">true</property>
 	
-	<property id="propAscentSpeedOnly" type="boolean">false</property>
+	<property id="propAscentSpeedOnly" type="boolean">true</property>
 	<property id="propInMotion" type="boolean">true</property>
 	
 	<property id="propZone1" type="number">50</property>

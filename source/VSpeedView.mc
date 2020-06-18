@@ -22,22 +22,25 @@ class VSpeedView extends WatchUi.SimpleDataField {
 	
 	const timePeriodInSec = 30;				// measure time period in seconds to calculate speed
 	const queueSize = timePeriodInSec;
-	const factorEWMA = 0.15;					// factor for Exponentially Weighted Moving Average (EWMA)
-	const AVG_VSPD_MIN_FOR_MOVEMENT = 50; 	// Minimal ascend speed for recording 
-	const MIN_VSPD = 20;
+	const factorEWMA = 0.15;				// factor for Exponentially Weighted Moving Average (EWMA)
+	const MIN_LAP_VSPD_FOR_MOVEMENT = 50; 	// Minimal ascent speed for recording when LAP statistic is moving only
+	const MIN_LAP_ASCENT = 50; 				// Minimal ascent required during a LAP to record LAP VSPD. 
+	const MIN_VSPD = 20;					// Minimal ascent speed for recording 
+
 
 	
-	private var lastComputeTime = 0;
+	private var lastComputeTime;
 	// data array for measurements series.
 	private var queue = new [queueSize];
-	private var idx = 0;
+	private var idx;
 	
 	// datafield in FIT file
 	private var vspdField;	
 	
 	private var avgVspdUpField;
-	private var avgVspdUp = 0;
-	private var timeVspdUp = 0;
+	private var avgVspdUp;
+	private var timeVspdUp;
+	private var totalAscentOnLapStart;
 	
 	private var propEnableGraph;
 	private var propEnableLAPStatistic;
@@ -71,8 +74,9 @@ class VSpeedView extends WatchUi.SimpleDataField {
         SimpleDataField.initialize();
         label =  WatchUi.loadResource(Rez.Strings.vspd_label) + " " +  WatchUi.loadResource(Rez.Strings.vspd_unit); // The displayed label of the data field.
         
-        lastComputeTime = 0;
+		initalizeVariables();
         
+        // read properties
         propEnableGraph = Application.Properties.getValue("propEnableGraph");
         propEnableLAPStatistic = Application.Properties.getValue("propEnableLAPStatistic");
         propEnableSummaryStatistic = Application.Properties.getValue("propEnableSummaryStatistic");
@@ -85,11 +89,12 @@ class VSpeedView extends WatchUi.SimpleDataField {
         propZone3 = Application.Properties.getValue("propZone3");
         propZone4 = Application.Properties.getValue("propZone4");
         
-        propZone2 = (propZone1 < propZone2) ? propZone2 : propZone1 + 1;
-        propZone3 = (propZone2 < propZone3) ? propZone3 : propZone2 + 1;
-        propZone4 = (propZone3 < propZone4) ? propZone4 : propZone3 + 1;
+        // very basic validation and correction of values
+        propZone2 = (propZone1 < propZone2) ? propZone2 : propZone1 + 100;
+        propZone3 = (propZone2 < propZone3) ? propZone3 : propZone2 + 100;
+        propZone4 = (propZone3 < propZone4) ? propZone4 : propZone3 + 100;
  
-        
+        // create fields
         if (propEnableGraph) {
 	        // Create the custom FIT data field to record vertical speed.
 	        vspdField = createField(
@@ -153,6 +158,20 @@ class VSpeedView extends WatchUi.SimpleDataField {
 		}
                 
     }
+    
+    
+    function initalizeVariables() {
+        lastComputeTime = 0;
+		idx = 0;
+		avgVspdUp = 0;
+		timeVspdUp = 0;
+		totalAscentOnLapStart = 0;
+		
+		for( var i = 0; i < queue.size(); i++ ) {
+			queue[i] = null;
+		}
+		System.println("initalizeVariables");
+	}
 
 
     // The given info object contains all the current workout information. 
@@ -164,18 +183,17 @@ class VSpeedView extends WatchUi.SimpleDataField {
 		// Read the ambient (local) barometric pressure as measured by the pressure sensor. 
 		// This data is already smoothed by a two-stage filter to reduce noise and instantaneous variation.
 
-		var p = info.ambientPressure;
-		
+		var p = info.ambientPressure;		
 		if (p == null) { return "n/a"; }
 
 		var time = Time.now();
-		var height = calcHeightFromPressure(p);	
-		
 		var computeInterval = 1;
 		if ( lastComputeTime != 0) {
 			computeInterval = time.subtract(lastComputeTime).value();
 		}
 		lastComputeTime = time;
+		
+		var height = calcHeightFromPressure(p);	
 
 		// Exponentially Weighted Moving Average (EWMA)
 		var newestDataPoint = readNewestEntryFromQueue();
@@ -184,7 +202,11 @@ class VSpeedView extends WatchUi.SimpleDataField {
 		}
         
         var dataPoint = fifoQueue({ :time=>time, :height=>height });
-		if (dataPoint == null) { return 0; } // handle start condition.
+		
+		// handle start condition.
+		if (dataPoint == null) { 
+			return 0; 
+		} 
 		
 		// vspd = (h - h0) / (t - t0)
 		var deltaTime = time.subtract(dataPoint[:time]).value();
@@ -208,17 +230,29 @@ class VSpeedView extends WatchUi.SimpleDataField {
         
         if (propEnableLAPStatistic) {
 	        // record LAP data for average ascend speed
-	        if (vspd > AVG_VSPD_MIN_FOR_MOVEMENT) {
+	        
+	        if (vspd > MIN_LAP_VSPD_FOR_MOVEMENT) {
 	        	avgVspdUp = (avgVspdUp * timeVspdUp + vspd * computeInterval) / (timeVspdUp + computeInterval);
 	        	timeVspdUp = timeVspdUp + computeInterval;
 	        	avgVspdUpField.setData(avgVspdUp);
 	        
 	        } else if (! propInMotion) {
-	        	vspd = (vspd < 0) ? 0 : vspd; // Ignore descent vor
+	        	vspd = (vspd < 0) ? 0 : vspd; // Ignore descent
 	        	avgVspdUp = (avgVspdUp * timeVspdUp + vspd * computeInterval) / (timeVspdUp + computeInterval);
 	 	        timeVspdUp = timeVspdUp + computeInterval;
 	        	avgVspdUpField.setData(avgVspdUp);
 	        }
+	        
+	        /*
+	        // supress values if ascent is less than a minimum since LAP start
+	        if (info.totalAscent == null) {
+	        System.println("==> info.totalAscent == null");
+	        }
+	        var totalActivityAscent = (info.totalAscent == null) ? 0 : info.totalAscent;
+	        if (totalActivityAscent - totalAscentOnLapStart > MIN_LAP_ASCENT) {
+	        	avgVspdUpField.setData(0);
+	        }
+	        */
         }
         
         if (propEnableSummaryStatistic) {
@@ -247,7 +281,38 @@ class VSpeedView extends WatchUi.SimpleDataField {
         
        	return vspd;
     }
+    
+    
+    function onTimerLap() {
+    	// This function gets called when a LAP event has occured and after the LAP records have been written to the FIT-File  
+    	// reset LAP variables
+    	avgVspdUp = 0;
+		timeVspdUp = 0;
+		totalAscentOnLapStart = getActivityInfo().totalAscent;
+		if (totalAscentOnLapStart == null) {
+			totalAscentOnLapStart = 0;
+		}  
+		System.println("onTimerLap");
+    }
+     
+     
+    function onTimerReset() {
+        initalizeVariables();
+    }
+    
+       
+    function onTimerStart() {
+    }
+    
+    function onTimerStop() {
+    }
+    
+    function onTimerPause() {
+    }
 
+	function onTimerResume() {
+    }
+    
     
     function secondsToTimeString(timeInSeconds) {
     	var hours = timeInSeconds / 3600;
