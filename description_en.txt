@@ -43,4 +43,4 @@ f) VSPD values less than |20| m/h are set to 0
 v 0.6.0 Correct units. Improved Algorithm. Changed graph color to Cobalt blue.
 v 0.7.0 New Functionality: Configurable in settings. Add Ø ascent speed in LAP. Add time in speed zones in summary statistic.
 v 0.7.1 Correct Ø ascent speed LAP statistic. Set EWMA factor to 0.15.
-v 0.7.2 Correct bug in Ø ascent speed LAP statistic. VSPD in LAP statistic will only be shown if LAP ascent is higher than 50 m.
+v 0.7.3 Correct bug in Ø ascent speed LAP statistic. VSPD in LAP statistic will only be shown if LAP ascent is higher than 50 m.
