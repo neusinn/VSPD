@@ -20,7 +20,7 @@
     <string id="propZone3">VSPD Zone 3 bis [m/h]</string>
     <string id="propZone4">VSPD Zone 4 bis [m/h]</string>
     
-    <string id="unit_duration"></string>
+    <string id="unit_duration"> </string>
     <string id="zone1_title">VSPD Z1</string>
     <string id="zone2_title">VSPD Z2</string>
     <string id="zone3_title">VSPD Z3</string>

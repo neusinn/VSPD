@@ -41,6 +41,7 @@ class VSpeedView extends WatchUi.SimpleDataField {
 	private var avgVspdUp;
 	private var timeVspdUp;
 	private var totalAscentOnLapStart;
+	private var activityIsRunning;
 	
 	private var propEnableGraph;
 	private var propEnableLAPStatistic;
@@ -166,6 +167,7 @@ class VSpeedView extends WatchUi.SimpleDataField {
 		avgVspdUp = 0;
 		timeVspdUp = 0;
 		totalAscentOnLapStart = 0;
+		activityIsRunning = false;
 		
 		for( var i = 0; i < queue.size(); i++ ) {
 			queue[i] = null;
@@ -210,6 +212,7 @@ class VSpeedView extends WatchUi.SimpleDataField {
 		
 		// vspd = (h - h0) / (t - t0)
 		var deltaTime = time.subtract(dataPoint[:time]).value();
+		if (deltaTime == 0) { return ""; } // prevent div 0 just in case
         var vspd = (height - dataPoint[:height]) / deltaTime * 3600;
         
         // DEBUG logData(info, vspd, height, height - dataPoint[:height], deltaTime);
@@ -228,7 +231,7 @@ class VSpeedView extends WatchUi.SimpleDataField {
 	        }
         }
         
-        if (propEnableLAPStatistic) {
+        if (propEnableLAPStatistic and activityIsRunning and (timeVspdUp + computeInterval) != 0) {
 	        // record LAP data for average ascend speed
 	        
 	        if (vspd > MIN_LAP_VSPD_FOR_MOVEMENT) {
@@ -251,7 +254,7 @@ class VSpeedView extends WatchUi.SimpleDataField {
 	        }
         }
         
-        if (propEnableSummaryStatistic) {
+        if (propEnableSummaryStatistic and activityIsRunning) {
 	        // record Zone summary
 	        if (vspd < propZone1) {
 	        	zone1 += computeInterval;
@@ -282,13 +285,16 @@ class VSpeedView extends WatchUi.SimpleDataField {
     function onTimerLap() {
     	// This function gets called when a LAP event has occured and after the LAP records have been written to the FIT-File  
     	// reset LAP variables
+    	System.println("onTimerLap");
     	avgVspdUp = 0;
 		timeVspdUp = 0;
-		totalAscentOnLapStart = getActivityInfo().totalAscent;
-		if (totalAscentOnLapStart == null) {
+		var info = Activity.getActivityInfo();
+		if (info != null and info.totalAscent != null) {
+			totalAscentOnLapStart = info.totalAscent;
+		} else {
 			totalAscentOnLapStart = 0;
-		}  
-		System.println("onTimerLap");
+		} 
+		System.println("onTimerLap: totalAscentOnLapStart=" + totalAscentOnLapStart); 
     }
      
      
@@ -298,15 +304,19 @@ class VSpeedView extends WatchUi.SimpleDataField {
     
        
     function onTimerStart() {
+    	activityIsRunning = true;
     }
     
     function onTimerStop() {
+    	activityIsRunning = false;
     }
     
     function onTimerPause() {
+    	activityIsRunning = false;	
     }
 
 	function onTimerResume() {
+		activityIsRunning = true;
     }
     
     

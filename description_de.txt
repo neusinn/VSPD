@@ -41,4 +41,4 @@ Neues
 v 0.6.0 Einheiten korrigieren. Verbesserter Algorithmus. Die Grafikfarbe in Kobaltblau geändert.
 v 0.7.0 Neu in Einstellungen konfigurierbar. Aufzeichnen und Anzeigen der Ø-Aufstiegsgeschwindigkeit in LAP Statistik. Aufzeichnen und Anzeigen derZeit in Geschwindigkeitszonen in Gesamtstatistik.
 v 0.7.1 Ø-Aufstiegsgeschwindigkeit in LAP Statistik korrigiert. EWMA Faktor auf 0.15 gesetzt.
-v 0.7.3 Bug in Ø-Aufstiegsgeschwindigkeit in LAP Statistik korrigiert. Falls der Aufstieg im LAP kleiner als 50 m is wird Ø-Aufstiegsgeschwindigkeit nicht ausgewiesen.
+v 0.8.0 Bugs in Ø-Aufstiegsgeschwindigkeit in LAP Statistik korrigiert. Falls der Aufstieg im LAP kleiner als 50 m is wird Ø-Aufstiegsgeschwindigkeit nicht ausgewiesen. Während Aktivität pausiert ist wird werden auch die Statistiken pausiert.
