@@ -1,18 +1,19 @@
-Vertical Speed (VSPD) is a data field to show the vertical speed based on local barometric pressure. It logs statistical information to the Activity and shows the vertical speed  graph in the Connect Mobil App or on the Connect Website. 
-Enable data recording and presenting in settings(!)
+Vertical Speed (VSPD) measure the vertical speed based on barometric pressure. 
+VSPD is much more than a simple datafield. It logs statistical information to the activity and shows the vertical speed as graph amd statistic in the Connect Mobil App or on the Connect Website. 
+* Enable data recording and presenting in settings(!)
 
 VSPD is also known as: Variometer, rate of climb and descent indicator (RCDI), rate-of-climb indicator, vertical speed indicator (VSI) or vertical velocity indicator (VVI).
 '
 *** WHY ***
-Wenn you do sports in the mountains, like Mountaineering, Trail Running, Skitouring, Mountainbiking or Climbing the ascend speed is an important number of your fitness. As the GPS signal can be week in the mountains or even wrong due to reflections it is often more accurate to use the barometric height to calculate the vertical speed. In addition the vertical speed value provided by Garmin by default is rounded to the next 50 m/s. This accuracy is to vague for serious training.
+Wenn you do sports in the mountains, like Mountaineering, Trail Running, Skitouring, Mountainbiking or Climbing the ascend speed is an important number of your fitness. As the GPS signal can be week in the mountains or even wrong due to reflections it is often more accurate to use the barometric height to calculate the vertical speed. VSPD shows the vertical speed at a 10m/h accuracy (Standard Garmin vertical speed field rounds to 50m/h which is to vague for serious training).
 '
 *** FUNCTIONS ***
 1. VSPD is a data field that shows the vertical speed in [m/h]. 
-2. VSPD records the vertical speed data to the FIT-file when used during an activity. 
-3. The VSPD recorded data will be presented as a graph when displaying your Activity in the Garmin Connect Website.
-4. Record Ø ascent speed in LAP statistic.
-5. Record time in speed zones in summary statistic.
-6. Configure in settings what data should be recorded and shown. 
+2. VSPD records the vertical speed during an activity. 
+3. The VSPD shows a graph oft the vertical speed when displaying the Activity in the Mobile App or on the Garmin Connect Website.
+4. LAP statistic of average ascent speed.
+5. Statistic of time per speed zones (summary statistic).
+6. Configurable in settings what data should be recorded and shown. 
 '
 *** CONFIGURE the VSPD datafield in the APP SETTINGS ***
 *** disable the additional statistic and graphs ***
@@ -21,24 +22,15 @@ Wenn you do sports in the mountains, like Mountaineering, Trail Running, Skitour
 - Enable/Disable ascend speed zones statistic
 - Record ascend speed only (suppress descent speed, this can improve readability)
 - LAP Ø : average ascend speed. Calculated during time you actually ascend. (Minimal ascend needs to be 50m).
-See: https://forums.garmin.com/developer/connect-iq/w/wiki/14/changing-your-app-settings-in-garmin-express-gcm-ciq-mobile-store on how to change the app settings.
+'
+* See: https://forums.garmin.com/developer/connect-iq/w/wiki/14/changing-your-app-settings-in-garmin-express-gcm-ciq-mobile-store on how to change the app settings.
 '
 *** CONTACT the Developer ***
-Sometime things works not as expected. Please note: this is a new data field and if you have issues contact the developer in order to improve.
-If you like it - we love to hear from you. So please write a review. Please add your email address so I’m able to answer you.
-'
-* Detailed Algorithm *
-vspd = delta h / delta t 
+Please write a review about your experience. So that I know if it is worth to keep improving this datafield.
 
-Unfortunately the pressure sensors of the devices are not very accurate and the data is quite noisy.  This is the algorithm to smoothen it. Its not perfect. The problem is that it is an balance between smoothness and reactiveness. 
-a) As datasource the ambient (local) barometric pressure as measured by the pressure sensor will be used. This source data comes smoothed by a two-stage filter to reduce noise and instantaneous variation.
-b) In addition the value are smoothes  by a Exponentially Weighted Moving Average (EWMA) filter with factor a = 0.15 of the newest measurement.
-c) The vertical speed calculated over a 30 second time period.
-d) VSPD is rounded on 10 m/h.
-e) The measurement is done every second.
-f) VSPD values less than |20| m/h are set to 0
 
-v 0.6.0 Correct units. Improved Algorithm. Changed graph color to Cobalt blue.
-v 0.7.0 New Functionality: Configurable in settings. Add Ø ascent speed in LAP. Add time in speed zones in summary statistic.
-v 0.7.1 Correct Ø ascent speed LAP statistic. Set EWMA factor to 0.15.
+
+v 1.0.0 Supports now also GPS devices. Include support for vivoactive, fenix 5S and fenix chronos.
 v 0.8.0 Correct bugs in Ø ascent speed LAP statistic. VSPD in LAP statistic will only be shown if LAP ascent is higher than 50 m. Statistic will exclude values during paused or stoped activity.
+v 0.7.1 Correct Ø ascent speed LAP statistic. Set EWMA factor to 0.15.
+v 0.7.0 New Functionality: Configurable in settings. Add Ø ascent speed in LAP. Add time in speed zones in summary statistic.

@@ -1,44 +1,38 @@
-Vertical Speed (VSPD) ist ein Datenfeld, das die vertikale Geschwindigkeit basierend auf dem lokalen barometrischen Druck anzeigt.
-Die Vertikalgeschwindigkeit wird auch in der Aktivität aufgezeichnet und als Grafik in der Connect Mobil App oder auf der Website dargestellt. Aktivieren des Aufnehmen der Daten und Anzeigen in Einstellungen(!)
+Vertical Speed (VSPD) misst die vertikale Geschwindigkeit basierend auf dem barometrischen Druck.
+VSDP ist viel mehr als ein einfaches Datenfeld. Die Vertikalgeschwindigkeit wird in der Aktivität aufgezeichnet und als Grafik und Statistiken in der Connect Mobil App oder auf der Website präsentiert. 
+* Aktivieren sie das Aufnehmen der Daten und Anzeigen in Einstellungen(!)
 ,
-*** WARUM brauche ich VSPD ? ***
-Für Bergsport wie Bergsteigen, Trail-Runnung, Skitouren, Mountainbiken und Klettern die Anstiegsgeschwindigkeit ist ein wichtiges Merkmal für deine Fitness. Leider ist das GPS Signal in den Bergen oft schwach oder durch Reflexionen gestört. Die Berechnung der Anstiegsgeschwindikeit aufgrund des barometrischen Drucks is daher oft besser. Zudem rundet Garmin im default Vertikal Speed Datenfeld die Werte auf 50m/s. Das ist für ein seriöses Training zu ungenau.
-VSPD ist auch bekannt als: Variometer, Steig- und Sinkgeschwindigkeitsindikator (RCDI), Steiggeschwindigkeitsindikator, Vertikalgeschwindigkeitsindikator (VSI) oder Vertikalgeschwindigkeitsindikator (VVI).
+*** VSPD von Bergsportler für Bergsportler ***
+Die vertikale Geschwindigkeit (Anstiegsgeschwindigkeit) ist das wichtigste Leistungsmerkmal für Bergsportler beim Wandern, Bergsteigen, Trail-Running, Skitouren, Mountainbiken und Klettern. 
+Das GPS Signal in den Bergen oft ungenügend oder durch Reflexionen gestört. Besser ist die Berechnung der Anstiegsgeschwindigkeit mittels des barometrischen Drucks. VSDP berechnet die vertikale Geschwindigkeit auf 10m/h genau (Garmin's standard Datenfeld rundet auf 50m/h, was für ein Training ungenügend ist). 
 '
-*** Die FUNKTIONEN des VSPd ***
+VSPD ist auch bekannt als: Variometer, Steig- und Sinkgeschwindigkeitsindikator (RCDI), An- und Abstiegsgeschwindigkeit, Vertikalgeschwindigkeitsindikator (VSI) oder Vertikalgeschwindigkeitsindikator (VVI).
+'
+*** Die FUNKTIONEN des VSPD ***
 1. VSPD ist ein Datenfeld, das die vertikale Geschwindigkeit in [m/h] anzeigt.
-2. VSPD zeichnet die Daten der Vertikalgeschwindigkeit in der FIT-Datei auf, wenn es während einer Aktivität verwendet wird.
-3. Die vom VSPD aufgezeichneten Daten werden als Grafik dargestellt, wenn Ihre Aktivität auf der Garmin Connect-Website angezeigt wird.
-4. Aufzeichnen und anzeigen der Ø-Aufstiegsgeschwindigkeit in der LAP-Statistik.
-5. Aufzeichnen und anzeigen der Zeit pro Geschwindigkeitszone in der Gesamtstatistik.
-6. Konfigurierbar welche Daten aufgezeichnet und angezeigt werden sollen in den Einstellungen.
+2. VSPD zeichnet die Vertikalgeschwindigkeit in einer Aktivität auf.
+3. VSPD präsentiert die Vertikale Geschwindigkeit als Grafik in Garmin in der Mobile-Applikation und auf der Connect-Website.
+4. LAP-Statistik der Ø-Aufstiegsgeschwindigkeit.
+5. Statistik der Zeit in einer definierten Geschwindigkeitszone (Gesamtstatisik).
+6. Konfigurierbar in den Einstellungen.
+7. Verbessert die Messungen des barometrischen Sensor durch aufwändige Filteralgorithmen.
 '
 *** KONFIGURIUEREN in den APPLIKATIONS-SETTINGS ***
-*** Ein-/Ausschalten Sie die zusätzlichen Statistiken und Diagramme ***
-
-- Ein-/Ausschalten von VSPD-Aufzeichnung und Grafik
-- Ein-/Ausschalten der Durchschnittsaufstiegsgeschwindigkeit LAP Statistik
-- Ein-/Ausschalten der Aufstiegsgeschwindigkeitszonen-Statistik
+*** Ein-/Ausschalten der zusätzlichen Statistiken und Diagramme ***
+- Ein-/Ausschalten von VSPD-Aufzeichnung und Grafik in einer Aktivität
+- Ein-/Ausschalten der Durchschnittsaufstiegsgeschwindigkeit in der LAP Statistik.
+- Möglichkeit Durchschnittsaufstiegsgeschwindikeit automatisch nur während des effektiven Aufstiegs zu berechnen.
+- Ein-/Ausschalten der Zeit in Aufstiegsgeschwindigkeitszonen in der Gesamtstatistik
 - Nur Aufstiegsgeschwindigkeit aufzeichnen (Abstiegsgeschwindigkeit unterdrücken, dies kann die Lesbarkeit verbessern)
-- LAP Ø: Durchschnittliche Aufstiegsgeschwindigkeit Gerechnet über die Zeit wo effektiv aufgestiegen wird und der Anstieg ist grösser als 50 m.
-Ändern der Einstellungen siehe: https://forums.garmin.com/developer/connect-iq/w/wiki/14/changing-your-app-settings-in-garmin-express-gcm-ciq-mobile-store
 '
-*** KONTATIEREN Sie den Entwickler ***
-Manchmal laufen die Dinge nicht wie erwartet. Bitte beachten Sie: Dies ist ein neues Datenfeld, und wenn Sie Probleme haben, wenden Sie sich für Verbesserungen direkt an den Entwickler. Bitte fügen sie ihre Email Adresse an falls sie eine Antwort wünschen.
-Wenn es Ihnen gefällt - freuen ich mich, von Ihnen zu hören. Teile sie ihre positiven Erfahrungen in einer Rezension.
+* Ändern der Einstellungen siehe: https://forums.garmin.com/developer/connect-iq/w/wiki/14/changing-your-app-settings-in-garmin-express-gcm-ciq-mobile-store
 '
-* Beschreibung des Algorithmus *
-vspd = delta h / delta t
-Leider sind Messdaten vom Drucksensor der Geräte nicht sehr genau und zudem ziemlich verrauscht. Folgender Algorithmus ist da um die Daten zu glätten. Er ist nicht perfekt. Das Problem ist, dass eine bessere Glättung nur auf Kosten Reaktionszeit hergestellt werden kann.
-a) Als Datenquelle wird der umgebende (lokale) barometrische Druck verwendet, wie er vom Drucksensor gemessen wird. Diese Quelldaten werden durch einen zweistufigen Filter geglättet, um Rauschen und momentane Schwankungen zu reduzieren.
-b) Zusätzlich werden die Werte durch einen Filter mit exponentiell gewichtetem gleitendem Mittelwert (EWMA) mit Faktor a = 0.15 der neuesten Messung geglättet.
-c) Die vertikale Geschwindigkeit wird jeweils über einen Zeitraum von 30 Sekunden berechnet.
-d) VSPD wird auf 10 m/h gerundet.
-e) Die Messung wird jede Sekunde durchgeführt.
-f) VSPD-Werte kleiner als |20| m/h werden auf 0 gesetzt.
+*** Helfen sie mit die Applikation zu verbessern ***
+Nicht nur Training sondern auch Programmierung kostet viel Schweiss. Belohnen sie mich mit einem Review damit ich weiss dass es sich lohnt VSPD weiter zu entwickeln. Teilen sie ihre Erfahrung! 
 
-Neues
-v 0.6.0 Einheiten korrigieren. Verbesserter Algorithmus. Die Grafikfarbe in Kobaltblau geändert.
-v 0.7.0 Neu in Einstellungen konfigurierbar. Aufzeichnen und Anzeigen der Ø-Aufstiegsgeschwindigkeit in LAP Statistik. Aufzeichnen und Anzeigen derZeit in Geschwindigkeitszonen in Gesamtstatistik.
-v 0.7.1 Ø-Aufstiegsgeschwindigkeit in LAP Statistik korrigiert. EWMA Faktor auf 0.15 gesetzt.
+
+
+v 1.0.0 Jetzt auch für GPS Geräte. Zudem neu auch für Vivoactive 3/4, fenix 5S and fenix chronos.
 v 0.8.0 Bugs in Ø-Aufstiegsgeschwindigkeit in LAP Statistik korrigiert. Falls der Aufstieg im LAP kleiner als 50 m is wird Ø-Aufstiegsgeschwindigkeit nicht ausgewiesen. Während Aktivität pausiert ist wird werden auch die Statistiken pausiert.
+v 0.7.1 Ø-Aufstiegsgeschwindigkeit in LAP Statistik korrigiert. EWMA Faktor auf 0.15 gesetzt.
+v 0.7.0 Neu in Einstellungen konfigurierbar. Aufzeichnen und Anzeigen der Ø-Aufstiegsgeschwindigkeit in LAP Statistik. Aufzeichnen und Anzeigen derZeit in Geschwindigkeitszonen in Gesamtstatistik.
