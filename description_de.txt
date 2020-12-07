@@ -1,10 +1,10 @@
 Vertical Speed (VSPD) misst die vertikale Geschwindigkeit basierend auf dem barometrischen Druck.
-VSDP ist viel mehr als ein einfaches Datenfeld. Die Vertikalgeschwindigkeit wird in der Aktivität aufgezeichnet und als Grafik und Statistiken in der Connect Mobil App oder auf der Website präsentiert. 
+VSDP ist viel mehr als ein einfaches Datenfeld. Die Vertikalgeschwindigkeit wird zudem in der Aktivität aufgezeichnet und als Grafik und Statistiken in der Connect Mobil App oder auf der Website präsentiert. Für das Training wird die Verweildauer in fünf (konfigurierbaren) Steiggeschwindikeitszonen angezeigt.
 * Aktivieren sie das Aufnehmen der Daten und Anzeigen in Einstellungen(!)
 ,
 *** VSPD von Bergsportler für Bergsportler ***
 Die vertikale Geschwindigkeit (Anstiegsgeschwindigkeit) ist das wichtigste Leistungsmerkmal für Bergsportler beim Wandern, Bergsteigen, Trail-Running, Skitouren, Mountainbiken und Klettern. 
-Das GPS Signal in den Bergen oft ungenügend oder durch Reflexionen gestört. Besser ist die Berechnung der Anstiegsgeschwindigkeit mittels des barometrischen Drucks. VSDP berechnet die vertikale Geschwindigkeit auf 10m/h genau (Garmin's standard Datenfeld rundet auf 50m/h, was für ein Training ungenügend ist). 
+Das GPS Signal ist in den Bergen oft ungenügend oder durch Reflexionen gestört. Genauer ist die Berechnung der Anstiegsgeschwindigkeit mittels des barometrischen Drucks. VSDP berechnet die vertikale Geschwindigkeit auf 10m/h genau (Garmin's standard Datenfeld rundet auf 50m/h, was für ein Training ungenügend ist). 
 '
 VSPD ist auch bekannt als: Variometer, Steig- und Sinkgeschwindigkeitsindikator (RCDI), An- und Abstiegsgeschwindigkeit, Vertikalgeschwindigkeitsindikator (VSI) oder Vertikalgeschwindigkeitsindikator (VVI).
 '
@@ -18,7 +18,7 @@ VSPD ist auch bekannt als: Variometer, Steig- und Sinkgeschwindigkeitsindikator 
 7. Verbessert die Messungen des barometrischen Sensor durch aufwändige Filteralgorithmen.
 '
 *** KONFIGURIUEREN in den APPLIKATIONS-SETTINGS ***
-*** Ein-/Ausschalten der zusätzlichen Statistiken und Diagramme ***
+Einschalten der zusätzlichen Statistiken und Diagramme
 - Ein-/Ausschalten von VSPD-Aufzeichnung und Grafik in einer Aktivität
 - Ein-/Ausschalten der Durchschnittsaufstiegsgeschwindigkeit in der LAP Statistik.
 - Möglichkeit Durchschnittsaufstiegsgeschwindikeit automatisch nur während des effektiven Aufstiegs zu berechnen.
@@ -28,7 +28,7 @@ VSPD ist auch bekannt als: Variometer, Steig- und Sinkgeschwindigkeitsindikator 
 * Ändern der Einstellungen siehe: https://forums.garmin.com/developer/connect-iq/w/wiki/14/changing-your-app-settings-in-garmin-express-gcm-ciq-mobile-store
 '
 *** Helfen sie mit die Applikation zu verbessern ***
-Nicht nur Training sondern auch Programmierung kostet viel Schweiss. Belohnen sie mich mit einem Review damit ich weiss dass es sich lohnt VSPD weiter zu entwickeln. Teilen sie ihre Erfahrung! 
+Haben sie eine Idee zur Verbesserung? Lassen sie es mich wissen. WICHTIG: Fügen sie ihre EMAIL ADRESSE an wenn sie eine Antwort möchten - sonst kann ich sie nicht kontaktieren.
 
 
 

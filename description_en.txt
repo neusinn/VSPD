@@ -16,7 +16,7 @@ Wenn you do sports in the mountains, like Mountaineering, Trail Running, Skitour
 6. Configurable in settings what data should be recorded and shown. 
 '
 *** CONFIGURE the VSPD datafield in the APP SETTINGS ***
-*** disable the additional statistic and graphs ***
+Enable the additional statistic and graphs:
 - Enable/Disable VSPD recording and graph
 - Enable/Disable Ø ascent speed in LAP
 - Enable/Disable ascend speed zones statistic
@@ -26,7 +26,7 @@ Wenn you do sports in the mountains, like Mountaineering, Trail Running, Skitour
 * See: https://forums.garmin.com/developer/connect-iq/w/wiki/14/changing-your-app-settings-in-garmin-express-gcm-ciq-mobile-store on how to change the app settings.
 '
 *** CONTACT the Developer ***
-Please write a review about your experience. So that I know if it is worth to keep improving this datafield.
+If you have any idea for improvement let me know.  Note: You NEED TO ADD YOUR EMAIL ADDRESS if you like an answer - otherwise I'm not able to contact you.
 
 
 
