@@ -29,6 +29,7 @@ Enable the additional statistic and graphs:
 If you have any idea for improvement let me know.  Note: You NEED TO ADD YOUR EMAIL ADDRESS if you like an answer - otherwise I'm not able to contact you.
 
 
+v 1.1.1 Supports now Edge 130 plus, Edge 1030, Edge 1030 Plus, Edge Enduro, epix (Gen 2), vivoactive 3, Descent G1 Descent Mk1, Descent Mk2, Descent Mk2s
 v 1.1.0 Supports now fenix7, fenix7s, fenix7x
 v 1.0.0 Supports now also GPS devices. Include support for vivoactive, fenix 5S and fenix chronos.
 v 0.8.0 Correct bugs in Ø ascent speed LAP statistic. VSPD in LAP statistic will only be shown if LAP ascent is higher than 50 m. Statistic will exclude values during paused or stoped activity.

@@ -3,7 +3,12 @@
 <iq:manifest xmlns:iq="http://www.garmin.com/xml/connectiq" version="3">
     <iq:application entry="VSpeedApp" id="67f0cd5dbd984cca8cf4617981c7a745" launcherIcon="@Drawables.LauncherIcon" minSdkVersion="2.1.0" name="@Strings.AppName" type="datafield" version="1.0.0">
         <iq:products>
+            <iq:product id="descentg1"/>
+            <iq:product id="descentmk1"/>
+            <iq:product id="descentmk2"/>
+            <iq:product id="descentmk2s"/>
             <iq:product id="edge130"/>
+            <iq:product id="edge130plus"/>
             <iq:product id="edge_520"/>
             <iq:product id="edge520plus"/>
             <iq:product id="edge530"/>
@@ -12,6 +17,9 @@
             <iq:product id="edge_1000"/>
             <iq:product id="edge1030"/>
             <iq:product id="edge1030bontrager"/>
+            <iq:product id="edge1030plus"/>
+            <iq:product id="enduro"/>
+            <iq:product id="epix2"/>
             <iq:product id="fenix5"/>
             <iq:product id="fenix5plus"/>
             <iq:product id="fenix5s"/>
@@ -34,6 +42,7 @@
             <iq:product id="fr945"/>
             <iq:product id="gpsmap66"/>
             <iq:product id="gpsmap86"/>
+            <iq:product id="vivoactive3"/>
             <iq:product id="vivoactive3d"/>
             <iq:product id="vivoactive3m"/>
             <iq:product id="vivoactive3mlte"/>

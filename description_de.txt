@@ -30,7 +30,7 @@ Einschalten der zusätzlichen Statistiken und Diagramme
 *** Helfen sie mit die Applikation zu verbessern ***
 Haben sie eine Idee zur Verbesserung? Lassen sie es mich wissen. WICHTIG: Fügen sie ihre EMAIL ADRESSE an wenn sie eine Antwort möchten - sonst kann ich sie nicht kontaktieren.
 
-
+v 1.1.1 Jetzt auch für Edge 130 plus, Edge 1030, Edge 1030 Plus, Edge Enduro, epix (Gen 2), vivoactive 3, Descent G1 Descent Mk1, Descent Mk2, Descent Mk2s
 v 1.1.0 Jetzt auch für fenix7, fenix7s, fenix7x
 v 1.0.0 Jetzt auch für GPS Geräte. Zudem neu auch für Vivoactive 3/4, fenix 5S and fenix chronos.
 v 0.8.0 Bugs in Ø-Aufstiegsgeschwindigkeit in LAP Statistik korrigiert. Falls der Aufstieg im LAP kleiner als 50 m is wird Ø-Aufstiegsgeschwindigkeit nicht ausgewiesen. Während Aktivität pausiert ist wird werden auch die Statistiken pausiert.
