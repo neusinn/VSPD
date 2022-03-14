@@ -6,6 +6,8 @@
     <string id="vspd_unit">m/h</string>
     
     <string id="avg_vspd_title">Ø ascend speed</string>
+    <string id="avg_vspd_overall_title">Ø ascend speed</string>
+    <string id="time_vspd_overall_title">ascent duration</string>
     <string id="avg_vspd_label">Ø VSPD</string>
     
     <string id="propEnableGraph">Enable VSPD recording and graph</string>

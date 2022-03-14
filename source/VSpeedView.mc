@@ -13,7 +13,7 @@ using Toybox.FitContributor;
     The barometer sensor has al lot of noice. Here the ambientPressure is used. This source data is already smoothed 
     by a two-stage filter to reduce noise and instantaneous variation.
     
-    In addition this algorithm will smoothe height with a Exponentially Weighted Moving Average (EWMA) filter with factor a = 0.1 of the newest measurement.
+    In addition this algorithm will smooth height with a Exponentially Weighted Moving Average (EWMA) filter with factor a = 0.15 of the newest measurement.
     The vertical speed is calculated over a 30 second time period and is rounded on 10 m/h.
     Vertical speed value below +/- 20 m/h will be set to 0.
 */
@@ -35,11 +35,14 @@ class VSpeedView extends WatchUi.SimpleDataField {
 	private var idx;
 	
 	// datafield in FIT file
-	private var vspdField;	
-	
+	private var vspdField;
 	private var avgVspdUpField;
+	private var avgVspdUpOverallField;
+	private var timeVspdUpOverallField;
+	
 	private var avgVspdUp;
 	private var timeVspdUp;
+	private var timeVspdUpOverall;
 	private var totalAscentOnLapStart;
 	private var activityIsRunning;
 	
@@ -111,7 +114,7 @@ class VSpeedView extends WatchUi.SimpleDataField {
         if (propEnableLAPStatistic) {        
 	        avgVspdUpField = createField(
 	            "avgVspdAscent",
-	            48,
+	            74,
 	            FitContributor.DATA_TYPE_SINT16,
 	            {:mesgType=>FitContributor.MESG_TYPE_LAP, :units=>"m/h"}
 	        );
@@ -156,8 +159,24 @@ class VSpeedView extends WatchUi.SimpleDataField {
 	        zone3Field.setData("0:00");
 	        zone4Field.setData("0:00");
 	        zone5Field.setData("0:00");
+	        
+	        avgVspdUpOverallField = createField(
+	            "avgVspdUpOverall",
+	            77,
+	            FitContributor.DATA_TYPE_SINT16,
+	            {:mesgType=>FitContributor.MESG_TYPE_SESSION, :units=>"m/h"}
+	        );
+	        avgVspdUpOverallField.setData(0);
+
+	        timeVspdUpOverallField = createField(
+	            "timeVspdUpOverall",
+	            78,
+	            FitContributor.DATA_TYPE_STRING,
+	            {:mesgType=>FitContributor.MESG_TYPE_SESSION, :count=>6}
+	        );
+	        timeVspdUpOverallField.setData("0:00");
+
 		}
-                
     }
     
     
@@ -166,6 +185,8 @@ class VSpeedView extends WatchUi.SimpleDataField {
 		idx = 0;
 		avgVspdUp = 0;
 		timeVspdUp = 0;
+		timeVspdUpOverall = 0;
+		
 		totalAscentOnLapStart = 0;
 		activityIsRunning = false;
 		
@@ -272,6 +293,11 @@ class VSpeedView extends WatchUi.SimpleDataField {
 	        	zone5 += computeInterval;
 	        	zone5Field.setData(secondsToTimeString(zone5));
 	        }
+	        
+	        
+	        if (vspd > MIN_LAP_VSPD_FOR_MOVEMENT || (! propInMotion)) {
+	        	timeVspdUpOverall = timeVspdUpOverall + computeInterval;        
+	        }	        
         }
         
         
@@ -285,7 +311,7 @@ class VSpeedView extends WatchUi.SimpleDataField {
     function onTimerLap() {
     	// This function gets called when a LAP event has occured and after the LAP records have been written to the FIT-File  
     	// reset LAP variables
-    	System.println("onTimerLap");
+		//System.println("onTimerLap");
     	avgVspdUp = 0;
 		timeVspdUp = 0;
 		var info = Activity.getActivityInfo();
@@ -299,23 +325,35 @@ class VSpeedView extends WatchUi.SimpleDataField {
      
      
     function onTimerReset() {
+    	//System.println("onTimerReset");
         initalizeVariables();
     }
     
        
     function onTimerStart() {
+    	//System.println("onTimerStart");
     	activityIsRunning = true;
     }
     
     function onTimerStop() {
+    	//System.println("onTimerStop");
     	activityIsRunning = false;
+
+    	var totalAscent = 0;
+		if (Activity.getActivityInfo() != null) {
+			totalAscent  = Activity.getActivityInfo().totalAscent;
+		}
+	    avgVspdUpOverallField.setData(totalAscent * 3600 / timeVspdUpOverall);
+	    timeVspdUpOverallField.setData(secondsToTimeString(timeVspdUpOverall));      
     }
-    
+   
     function onTimerPause() {
+    	//System.println("onTimerPause");
     	activityIsRunning = false;	
     }
 
 	function onTimerResume() {
+		//System.println("onTimerResume");
 		activityIsRunning = true;
     }
     

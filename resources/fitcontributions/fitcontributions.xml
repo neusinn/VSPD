@@ -29,5 +29,13 @@
 	<fitField id="55" sortOrder="11"
 	    displayInActivitySummary="true"
 		dataLabel="@Strings.zone5_title" unitLabel="@Strings.unit_duration" />
+
+	<fitField id="77" sortOrder="8"
+	    displayInActivitySummary="true"
+		dataLabel="@Strings.avg_vspd_overall_title" unitLabel="@Strings.vspd_unit" />
+	
+	<fitField id="78" sortOrder="9"
+	    displayInActivitySummary="true"
+		dataLabel="@Strings.time_vspd_overall_title" unitLabel="@Strings.unit_duration" />
 						
 </fitContributions>
